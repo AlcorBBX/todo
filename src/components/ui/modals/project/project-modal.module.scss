@@ -1,0 +1,36 @@
+.modal {
+  position: absolute;
+  width: 300px;
+  min-height: 300px;
+  border: 1px solid grey;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+
+.content {
+  overflow-y: auto;
+
+  p {
+    color: #5e6c84;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 4px;
+    margin-top: 12px;
+  }
+}
+.colorTheme {
+  display: flex;
+
+  div {
+    margin: 2px;
+    border-radius: 5px;
+  }
+}

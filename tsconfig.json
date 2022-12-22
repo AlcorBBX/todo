@@ -19,6 +19,40 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
+    // allies
+    // "baseUrl": "./src/",
+    // "paths": {
+    //   "@/components/*": [
+    //     "components/*"
+    //   ],
+    //   "@/pages/*": [
+    //     "pages/*"
+    //   ],
+    //   "@/assets/*": [
+    //     "assets/*"
+    //   ],
+    //   "@/hooks/*": [
+    //     "hooks/*"
+    //   ],
+    //   "@/providers/*": [
+    //     "providers/*"
+    //   ],
+    //   "@/services/*": [
+    //     "services/*"
+    //   ],
+    //   "@/utils/*": [
+    //     "utils/*"
+    //   ],
+    //   "@/types/*": [
+    //     "types/*"
+    //   ],
+    //   "@/store/*": [
+    //     "store/*"
+    //   ],
+    //   "@/routes/*": [
+    //     "routes/*"
+    //   ],
+    // }
   },
   "include": [
     "src"

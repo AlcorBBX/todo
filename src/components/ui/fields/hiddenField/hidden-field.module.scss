@@ -1,0 +1,9 @@
+.field {
+  color: black;
+  border: none;
+  background: none;
+
+  &:focus {
+    background-color: #ebecf0;
+  }
+}

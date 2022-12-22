@@ -1,0 +1,16 @@
+.field {
+  input {
+    height: 20px;
+    padding: 12px 8px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.fieldName {
+  span {
+    color: red;
+  }
+}

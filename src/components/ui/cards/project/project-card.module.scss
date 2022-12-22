@@ -1,0 +1,54 @@
+.projectsList {
+  display: flex;
+  max-width: 50vw;
+  overflow-x: auto;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  min-width: 150px;
+  padding: 10px;
+  background-color: #458131;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+
+  position: relative;
+
+  &:hover::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    display: flex;
+    justify-content: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    color: #fff;
+    line-height: 20px;
+    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  button {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}

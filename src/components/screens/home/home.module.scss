@@ -1,0 +1,23 @@
+.home {
+  display: flex;
+  justify-content: center;
+}
+
+.projects {
+  h3 {
+    margin-top: 15px;
+    text-align: start;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #172b4d;
+    width: fit-content;
+
+    &:first-child{
+        margin-top: 0;
+    }
+  }
+}
+
+.projectsCards {
+  display: flex;
+}
