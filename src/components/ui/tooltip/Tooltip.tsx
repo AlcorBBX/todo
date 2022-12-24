@@ -28,6 +28,9 @@ export const Tooltip = ({ children, text }: TooltipProps) => {
       return;
     }
 
+    // Метод Element.getBoundingClientRect() возвращает размер элемента 
+    // и его позицию относительно viewport 
+    // (часть страницы, показанная на экране, и которую мы видим).
     const anchorRect = anchorEl.getBoundingClientRect();
     const tooltipRect = tooltipEl.getBoundingClientRect();
 

@@ -1,5 +1,6 @@
 .boardCard {
   width: 270px;
+  height: max-content;
   background-color: #ebecf0;
   padding: 10px 20px;
   border-radius: 5px;
@@ -20,4 +21,16 @@
 
 .taskList {
   overflow-y: auto;
+
+  input {
+    width: 100%;
+    min-height: 20px;
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 5px;
+
+    &:focus{
+      outline: none;
+    }
+  }
 }

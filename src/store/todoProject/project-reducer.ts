@@ -1,11 +1,11 @@
 import { IProject } from "../../types/project.interface";
 
-type TypeProjectState = {
+interface IProjectState {
   projects: IProject[];
   payload?: any;
 };
 
-const projectState: TypeProjectState = {
+const projectState: IProjectState = {
   projects: [],
 };
 
@@ -17,7 +17,7 @@ type TypeAction = {
 const projectReducer = (
   state = projectState,
   action: TypeAction
-): TypeProjectState => {
+): IProjectState => {
   switch (action.type) {
     case "INITIAL_PROJECTS": {
       state.projects = action.payload;

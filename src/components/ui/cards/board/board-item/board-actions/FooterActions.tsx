@@ -1,14 +1,25 @@
 import { NewTask } from "./NewTask";
 
-interface IFooterActions {
+interface INewTask {
   show: boolean;
   setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
+  onClickHandler(): void;
 }
 
-export const FooterActions = ({ show, setIsShow }: IFooterActions) => {
+interface IFooterActions extends INewTask {}
+
+export const FooterActions = ({
+  show,
+  setIsShow,
+  onClickHandler,
+}: IFooterActions) => {
   return (
     <>
-      <NewTask show={show} setIsShow={setIsShow} />
+      <NewTask
+        onClickHandler={onClickHandler}
+        show={show}
+        setIsShow={setIsShow}
+      />
     </>
   );
 };

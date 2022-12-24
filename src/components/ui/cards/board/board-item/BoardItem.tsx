@@ -1,13 +1,14 @@
-import { memo, useCallback, useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import { HiddenField } from "../../..";
 import { FooterActions } from "./board-actions/FooterActions";
 
-import styles from "../board-card.module.scss";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addNewTask } from "../../../../../store/todoTask/task-actions";
 import { useTypedSelector } from "../../../../../hooks";
 import { localStorageWrapper } from "../../../../../helpers/storage";
+
+import styles from "../board-card.module.scss";
 
 export interface BoardItemChildProps {}
 
@@ -29,7 +30,7 @@ export const BoardItem = ({ children, title }: BoardItemProps) => {
 
   const dispatch = useDispatch();
 
-  const onClickHandler = useCallback(() => {
+  const onClickHandler = () => {
     const inputText = textRef.current;
     if (inputText.length) {
       const newProject = [...tasks];
@@ -53,7 +54,7 @@ export const BoardItem = ({ children, title }: BoardItemProps) => {
       );
       setText("");
     }
-  }, []);
+  };
 
   return (
     <>
@@ -62,17 +63,14 @@ export const BoardItem = ({ children, title }: BoardItemProps) => {
         <div className={styles.taskList}>
           {children({})}
 
-          {isShow && (
-            <input
-              placeholder='Введите название для этой карточки'
-              value={text}
-              onChange={e => setText(e.target.value)}
-            />
-          )}
-          <SendButton onClick={onClickHandler} />
+          {isShow && <SendInput text={text} setText={setText} />}
         </div>
         <div className={styles.actions}>
-          <FooterActions show={isShow} setIsShow={setIsShow} />
+          <FooterActions
+            onClickHandler={onClickHandler}
+            show={isShow}
+            setIsShow={setIsShow}
+          />
         </div>
       </div>
     </>
@@ -96,3 +94,18 @@ export const BoardHeader = memo(({ title }: IBoardHeader) => {
 export const SendButton = memo(({ onClick }: any) => {
   return <button onClick={onClick}>Test</button>;
 });
+
+interface ISendInput {
+  text: string;
+  setText: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const SendInput = ({ text, setText }: ISendInput) => {
+  return (
+    <input
+      placeholder='Введите название для этой карточки'
+      value={text}
+      onChange={e => setText(e.target.value)}
+    />
+  );
+};
