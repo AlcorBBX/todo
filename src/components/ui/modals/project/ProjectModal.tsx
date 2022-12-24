@@ -8,10 +8,6 @@ import { addNewProject } from "../../../../store/todoProject/project-actions";
 import { ColorsProject } from "./ColorsProject";
 
 import styles from "./project-modal.module.scss";
-// eslint-disable-next-line no-lone-blocks
-{
-  /* <Modal title='qw'>{props => <button {...props}>Open Modal</button>}</Modal> */
-}
 
 interface ModalChildProps {
   onClick: React.MouseEventHandler<HTMLElement>;
@@ -30,7 +26,7 @@ export const ProjectModal = ({ children }: ModalProps) => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const [inputValue, setInputValue] = useState<string>("");
 
-  const InputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string>();
 
   useLayoutEffect(() => {
@@ -84,7 +80,7 @@ export const ProjectModal = ({ children }: ModalProps) => {
               </div>
               <div className={styles.input}>
                 <Field
-                  ref={InputRef}
+                  ref={inputRef}
                   value={inputValue}
                   setValue={setInputValue}
                   error={error}

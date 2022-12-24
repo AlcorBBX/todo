@@ -4,11 +4,10 @@ export { DatePicker } from "./datePicker/DatePicker";
 //modals
 export { Modal } from "./modals/Modal";
 export { ProjectModal } from "./modals/project/ProjectModal";
+export { TaskModal } from "./modals/task/TaskModal";
 
 //tooltips
 export { Tooltip } from "./tooltip/Tooltip";
-
-export { Portal } from "../../helpers/portal/Portal";
 
 //cards
 export { ProjectCard } from "./cards/project/ProjectCard";

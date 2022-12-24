@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { Modal, NewProjectButton, ProjectModal, Tooltip } from "../../../ui";
+import { NewProjectButton, ProjectModal, Tooltip } from "../../../ui";
 
 import styles from "../home.module.scss";
 

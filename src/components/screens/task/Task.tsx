@@ -5,7 +5,6 @@ export const Task = () => {
   return (
     <div className={styles.task}>
       <BoardCard />
-      
     </div>
   );
 };

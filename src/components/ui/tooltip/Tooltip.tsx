@@ -1,10 +1,6 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
-import { Portal } from "..";
-
-// eslint-disable-next-line no-lone-blocks
-{
-  /* <Tooltip text='qw'>{props => <p {...props}>Del</p>}</Tooltip> */
-}
+import React, { useLayoutEffect, useState } from "react";
+import { Portal } from "../../../helpers/portal/Portal";
+import { useOutside } from "../../../hooks";
 
 interface TooltipChildProps {
   onMouseEnter: React.MouseEventHandler<HTMLElement>;
@@ -17,19 +13,19 @@ interface TooltipProps {
 }
 
 export const Tooltip = ({ children, text }: TooltipProps) => {
+  const { ref, anchorEl, setAnchorEl } = useOutside();
+
   const [position, setPosition] = useState({ top: 0, left: 0 });
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    const tooltipEl = tooltipRef.current;
+    const tooltipEl = ref.current;
 
     if (!anchorEl || !tooltipEl) {
       return;
     }
 
-    // Метод Element.getBoundingClientRect() возвращает размер элемента 
-    // и его позицию относительно viewport 
+    // Метод Element.getBoundingClientRect() возвращает размер элемента
+    // и его позицию относительно viewport
     // (часть страницы, показанная на экране, и которую мы видим).
     const anchorRect = anchorEl.getBoundingClientRect();
     const tooltipRect = tooltipEl.getBoundingClientRect();
@@ -47,7 +43,7 @@ export const Tooltip = ({ children, text }: TooltipProps) => {
       {anchorEl && (
         <Portal>
           <div
-            ref={tooltipRef}
+            ref={ref}
             className='tooltip'
             style={{
               top: position.top,

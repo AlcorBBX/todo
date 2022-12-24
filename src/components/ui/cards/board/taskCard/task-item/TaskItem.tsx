@@ -1,4 +1,4 @@
-import { ProjectModal } from "../../../..";
+import { TaskModal } from "../../../..";
 import { ITask } from "../../../../../../types/task.interface";
 import styles from "./task.module.scss";
 
@@ -9,7 +9,7 @@ interface ITaskItemProps {
 export const TaskItem = ({ task }: ITaskItemProps) => {
   return (
     <div className={styles.card}>
-      <ProjectModal>{props => <p {...props}>{task.title}</p>}</ProjectModal>
+      <TaskModal>{props => <p {...props}>{task.title}</p>}</TaskModal>
     </div>
   );
 };
