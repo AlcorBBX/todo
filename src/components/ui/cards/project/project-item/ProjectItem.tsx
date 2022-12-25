@@ -34,7 +34,11 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
     dispatch(deleteProject(project.id));
   };
   return (
-    <div onClick={() => history(`/task/${project.id}`)} className={styles.card}>
+    <div
+      onClick={() => history(`/task/${project.id}`)}
+      className={styles.card}
+      style={{ background: project.backgroundColor }}
+    >
       <div className={styles.cardHeader}>
         <p>{project.name}</p>
         <div>

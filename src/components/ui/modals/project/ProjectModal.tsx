@@ -25,6 +25,7 @@ export const ProjectModal = ({ children }: ModalProps) => {
 
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const [inputValue, setInputValue] = useState<string>("");
+  const [color, setColor] = useState("0079bf");
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string>();
@@ -39,19 +40,25 @@ export const ProjectModal = ({ children }: ModalProps) => {
     if (textRef.current) {
       const newProject = [...projects];
       const id = Date.now() * 2;
-      newProject.push({ id: id, name: textRef.current });
+      newProject.push({
+        id: id,
+        name: textRef.current,
+        backgroundColor: color,
+      });
 
       localStorageWrapper.set("projects", newProject);
       dispatch(
         addNewProject({
           id: id,
           name: textRef.current,
+          backgroundColor: color,
         })
       );
       setInputValue("");
       setAnchorEl(null);
     }
   };
+
   return (
     <>
       {anchorEl && (
@@ -75,7 +82,7 @@ export const ProjectModal = ({ children }: ModalProps) => {
                 <p>Фон</p>
                 <div className={styles.picturesTheme}></div>
                 <div className={styles.colorTheme}>
-                  <ColorsProject />
+                  <ColorsProject color={color} setColor={setColor} />
                 </div>
               </div>
               <div className={styles.input}>
@@ -86,12 +93,12 @@ export const ProjectModal = ({ children }: ModalProps) => {
                   error={error}
                 />
               </div>
-              <div className={styles.tagsDropdown}>
+              {/* <div className={styles.tagsDropdown}>
                 <select>
                   <option>Рабочее пространство</option>
                   <option>Избранное</option>
                 </select>
-              </div>
+              </div> */}
               <div className={styles.buttons}>
                 <MainButton onClick={() => createNewProject()}>
                   Создать

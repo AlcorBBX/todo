@@ -1,41 +1,48 @@
-export const ColorsProject = () => {
+import styles from "./project-modal.module.scss";
+
+interface IColorsProject {
+  color: string;
+  setColor: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const ColorsProject = ({ color, setColor }: IColorsProject) => {
   return (
     <>
       <div
         style={{
-          width: "50px",
-          height: "40px",
           backgroundColor: "#0079bf",
         }}
-      ></div>
+        className={styles.colorsCard}
+        onClick={() => setColor(() => "#0079bf")}
+      >{color === "#0079bf" && 'picked' }</div>
       <div
         style={{
-          width: "50px",
-          height: "40px",
           backgroundColor: "#d29034",
         }}
-      ></div>
+        className={styles.colorsCard}
+        onClick={() => setColor(() => "#d29034")}
+      >{color === "#d29034" && 'picked' }</div>
       <div
         style={{
-          width: "50px",
-          height: "40px",
           backgroundColor: "#519839",
         }}
-      ></div>
+        className={styles.colorsCard}
+        onClick={() => setColor(() => "#519839")}
+      >{color === "#519839" && 'picked' }</div>
       <div
         style={{
-          width: "50px",
-          height: "40px",
           backgroundColor: "#b04632",
         }}
-      ></div>
+        className={styles.colorsCard}
+        onClick={() => setColor(() => "#b04632")}
+      >{color === "#b04632" && 'picked' }</div>
       <div
         style={{
-          width: "50px",
-          height: "40px",
           backgroundColor: "#89609e",
         }}
-      ></div>
+        className={styles.colorsCard}
+        onClick={() => setColor(() => "#89609e")}
+      >{color === "#89609e" && 'picked' }</div>
     </>
   );
 };

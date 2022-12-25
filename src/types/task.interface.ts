@@ -19,22 +19,19 @@ export interface ITask {
   type: string;
   projectId: number;
   length?: number;
+  taskInfo?: ITaskInfo;
 }
 
-type TypeSubTask = {};
+export interface ITaskInfo {
+  id: number;
+  description: string;
+  createAt: number;
+  updateAt?: number;
+  priority?: string;
+  subTasks?: TypeSubTask[];
+}
 
-type TypeTask = {
-  queu?: string;
-  develop?: string;
-  done?: string;
-};
-
-type TypeTaskBoard = {
-  queu?: TypeQueue;
-  develop?: TypeDevelop;
-  done?: TypeDone;
-};
-
-type TypeQueue = TypeTask[];
-type TypeDevelop = TypeTask[];
-type TypeDone = TypeTask[];
+export interface TypeSubTask {
+  title: string;
+  description: string;
+}

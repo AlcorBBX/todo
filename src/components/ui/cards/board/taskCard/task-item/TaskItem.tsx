@@ -9,7 +9,13 @@ interface ITaskItemProps {
 export const TaskItem = ({ task }: ITaskItemProps) => {
   return (
     <div className={styles.card}>
-      <TaskModal>{props => <p {...props}>{task.title}</p>}</TaskModal>
+      <TaskModal task={task}>
+        {props => (
+          <p key={task.id} {...props}>
+            {task.title}
+          </p>
+        )}
+      </TaskModal>
     </div>
   );
 };
