@@ -29,6 +29,8 @@ export interface ITaskInfo {
   updateAt?: number;
   priority?: string;
   subTasks?: TypeSubTask[];
+
+  taskId: number;
 }
 
 export interface TypeSubTask {

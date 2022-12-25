@@ -54,11 +54,15 @@ interface INameTaskModalProps {
 
 export const NameTaskModal = ({ task }: INameTaskModalProps) => {
   return (
-    <div>
-      <div>
-        <p>{task.title}</p>
-        <p>
-          В колонке <span>{task.type}</span>
+    <div className={styles.nameBlock}>
+      <div className={styles.nameBlockItem}>
+        <p>img</p>
+      </div>
+
+      <div className={styles.nameBlockItem}>
+        <p className={styles.name}>{task.title}</p>
+        <p className={styles.positionInfo}>
+          в колонке <span>{task.type}</span>
         </p>
       </div>
     </div>

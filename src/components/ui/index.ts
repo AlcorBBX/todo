@@ -22,3 +22,5 @@ export { CancelButton } from "./buttons/cancel/CancelButton";
 //inputs
 export { Field } from "./fields/Field";
 export { HiddenField } from "./fields/hiddenField/HiddenField";
+
+export { ThemePicker } from "./themePicker/ThemePicker";
