@@ -17,7 +17,7 @@ export const ProjectCategory: FC<PropsWithChildren<IProjectCategoryProps>> = ({
     <>
       <div>
         <Tooltip text={tooltipText}>
-          {props => <h3 {...props}>{title}</h3>}
+          {props => <h3 className={styles.textHeader} {...props}>{title}</h3>}
         </Tooltip>
       </div>
       <div className={styles.projectsCards}>

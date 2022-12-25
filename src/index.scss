@@ -1,12 +1,12 @@
 body {
-  margin-top: 50px;
+  // margin-top: 50px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: var(--background-color);
+  background: var(--main-bgColor);
 }
 
 code {
@@ -29,10 +29,18 @@ code {
 
 
 :root[data-theme="light"] {
-  --background-color: #fafafa;
+  --main-bgColor: #f0e7db;
+  --header-background: #f4ede4;
+
+  --text-header: #1a202c;
 }
 
 :root[data-theme="dark"] {
-  --background-color: #2b3e51;
+  --main-bgColor: #202022;
+  --header-background: #202022;
+
+  --text-header: #ededed;
 }
 
+
+// заголовки: #ededed
