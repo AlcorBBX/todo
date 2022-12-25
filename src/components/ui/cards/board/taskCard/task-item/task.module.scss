@@ -1,5 +1,6 @@
 .card {
-  background-color: white;
+  background-color: var(--main-bgColor);
+  color: var(--text-header);
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;

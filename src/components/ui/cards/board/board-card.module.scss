@@ -1,7 +1,7 @@
 .boardCard {
   width: 270px;
   height: max-content;
-  background-color: #ebecf0;
+  background-color: var(--secondary-bgColor);
   padding: 10px 20px;
   border-radius: 5px;
   margin: 5px;
@@ -13,7 +13,8 @@
   margin-bottom: 10px;
 
   p {
-    color: #6b778c;
+    // color: #6b778c;
+    color: var(--text-header);
     font-size: 16px;
     font-weight: 400;
   }
@@ -28,6 +29,8 @@
     padding: 5px 10px;
     border: 1px solid rgba(0, 0, 0, 0.212);
     border-radius: 5px;
+    color: var(--text-header);
+    background-color: var(--secondary-bgColor);
 
     &:focus{
       outline: none;

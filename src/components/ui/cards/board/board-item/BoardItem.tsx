@@ -91,10 +91,6 @@ export const BoardHeader = memo(({ title }: IBoardHeader) => {
   );
 });
 
-export const SendButton = memo(({ onClick }: any) => {
-  return <button onClick={onClick}>Test</button>;
-});
-
 interface ISendInput {
   text: string;
   setText: React.Dispatch<React.SetStateAction<string>>;

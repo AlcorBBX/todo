@@ -8,11 +8,11 @@ import { IProject } from "../types/project.interface";
 export const HomePage = () => {
   const dispatch = useDispatch();
 
-  const lo = localStorageWrapper.get<IProject[]>("projects");
+  const localStorageProjects = localStorageWrapper.get<IProject[]>("projects");
 
   useLayoutEffect(() => {
     return () => {
-      if (lo) dispatch(initialProjects(lo));
+      if (localStorageProjects) dispatch(initialProjects(localStorageProjects));
       else console.log("localStorage is empty");
     };
   }, []);

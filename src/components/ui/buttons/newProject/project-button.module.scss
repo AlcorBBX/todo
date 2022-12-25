@@ -1,6 +1,15 @@
 .button {
   width: 200px;
   height: 100px;
-  border: none;
-  color: #172b4d;
+  border: 3px dotted var(--button-outlined-bgColor);
+  background: none;
+  color: var(--text-header);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--secondary-bgColor);
+  }
+
+  &:active {
+  }
 }

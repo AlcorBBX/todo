@@ -7,11 +7,11 @@ import { ITask } from "../types/task.interface";
 
 export const TasksPage = () => {
   const dispatch = useDispatch()
-  const lo = localStorageWrapper.get<ITask[]>("tasks");
+  const localStorageTasks = localStorageWrapper.get<ITask[]>("tasks");
 
   useLayoutEffect(() => {
     return () => {
-      if (lo) dispatch(initialTasks(lo));
+      if (localStorageTasks) dispatch(initialTasks(localStorageTasks));
       else console.log("localStorage is empty");
     };
   }, []);
