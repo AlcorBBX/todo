@@ -1,0 +1,25 @@
+.content {
+  overflow-y: auto;
+
+  p {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 4px;
+    margin-top: 12px;
+  }
+}
+.colorTheme {
+  display: flex;
+
+  div {
+    margin: 2px;
+    border-radius: 5px;
+  }
+}
+
+.colorsCard {
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+}

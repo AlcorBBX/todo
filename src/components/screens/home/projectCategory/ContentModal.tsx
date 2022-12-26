@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import { Field, MainButton } from "../../../ui";
 import { ColorsProject } from "../../../ui/modals/project/ColorsProject";
 
 import styles from "./content-modal.module.scss";
 
 export const ContentModaL = () => {
   const [color, setColor] = useState("0079bf");
+
+  const [inputValue, setInputValue] = useState<string>("");
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState<string>();
+
+  useLayoutEffect(() => {
+    !inputValue ? setError("Укажите название доски") : setError("");
+  }, [inputValue]);
+
+  const createNewProject = () => {};
 
   return (
     <>
@@ -17,12 +29,12 @@ export const ContentModaL = () => {
           </div>
         </div>
         <div className={styles.input}>
-          {/* <Field
+          <Field
             ref={inputRef}
             value={inputValue}
             setValue={setInputValue}
             error={error}
-          /> */}
+          />
         </div>
         {/* <div className={styles.tagsDropdown}>
                 <select>
@@ -31,7 +43,7 @@ export const ContentModaL = () => {
                 </select>
               </div> */}
         <div className={styles.buttons}>
-          {/* <MainButton onClick={() => createNewProject()}>Создать</MainButton> */}
+          <MainButton onClick={() => createNewProject()}>Создать</MainButton>
         </div>
       </div>
     </>

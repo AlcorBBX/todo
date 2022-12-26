@@ -1,12 +1,6 @@
-import { FC, PropsWithChildren, useState } from "react";
+import { FC, PropsWithChildren } from "react";
 import { useOutside } from "../../../../hooks";
-import {
-  MainModal,
-  NewProjectButton,
-  ProjectModal,
-  Tooltip,
-} from "../../../ui";
-import { ColorsProject } from "../../../ui/modals/project/ColorsProject";
+import { MainModal, NewProjectButton, Tooltip } from "../../../ui";
 
 import styles from "../home.module.scss";
 import { ContentModaL } from "./ContentModal";
@@ -39,11 +33,7 @@ export const ProjectCategory: FC<PropsWithChildren<IProjectCategoryProps>> = ({
       <div className={styles.projectsCards}>
         {children}
         <div>
-          {/* <ProjectModal>
-            {props => <NewProjectButton {...props} text='Создать доску' />}
-          </ProjectModal> */}
-
-          <NewProjectButton onClick={(e) => OpenModal(e)} text='Создать доску' />
+          <NewProjectButton onClick={e => OpenModal(e)} text='Создать доску' />
           <MainModal
             refEl={ref}
             anchorEl={anchorEl}
