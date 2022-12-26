@@ -5,28 +5,26 @@ import { useOutside } from "../../../hooks";
 import styles from "./modal.module.scss";
 
 interface ModalChildProps {
-  onClick: React.MouseEventHandler<HTMLElement>;
+  // onClick: React.MouseEventHandler<HTMLElement>;
 }
 
 interface ModalProps {
-  children: (props: ModalChildProps) => React.ReactElement;
+  // children: (props: ModalChildProps) => React.ReactElement;
+  children: React.ReactNode
+  ref: React.RefObject<HTMLDivElement>
+  anchorEl: HTMLElement | null
 }
 
-export const Modal = ({ children }: ModalProps) => {
-  const { ref, anchorEl, setAnchorEl } = useOutside();
+export const Modal = ({ children, ref, anchorEl }: ModalProps) => {
+  // const { ref, anchorEl, setAnchorEl } = useOutside();
 
   const [position, setPosition] = useState({ top: 0, left: 0 });
-
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(e.currentTarget);
-  };
 
   return (
     <>
       {anchorEl && (
         <Portal>
           <div
-            
             className={styles.modal}
             style={{
               top: position.top,
@@ -34,24 +32,11 @@ export const Modal = ({ children }: ModalProps) => {
             }}
           >
             <div ref={ref} className={styles.modalInner}>
-              {children({
-                onClick: (e: React.MouseEvent<HTMLElement>) => {
-                  setAnchorEl(null);
-                },
-              })}
+              {children}
             </div>
           </div>
         </Portal>
       )}
-      <OpenModalButton onClick={handleClick} />
     </>
   );
-};
-
-interface IOpenModalButton {
-  onClick: React.MouseEventHandler<HTMLElement>;
-}
-
-export const OpenModalButton = ({ onClick }: IOpenModalButton) => {
-  return <button onClick={onClick}>Open Modal</button>;
 };

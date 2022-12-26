@@ -5,6 +5,9 @@ export { DatePicker } from "./datePicker/DatePicker";
 export { Modal } from "./modals/Modal";
 export { ProjectModal } from "./modals/project/ProjectModal";
 export { TaskModal } from "./modals/task/TaskModal";
+export { OverlayingModal } from "./modals/overlaying/OverlayingModal";
+export { MainModal } from "./modals/main/MainModal";
+export { DialogModal } from "./modals/dialog/DialogModal";
 
 //tooltips
 export { Tooltip } from "./tooltip/Tooltip";
