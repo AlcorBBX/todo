@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+p {
+  color: var(--text-header);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,17 +31,17 @@ code {
 }
 //pink: #d555a4
 :root[data-theme="light"] {
-  --main-bgColor: #f0e7db;
-  --secondary-bgColor: #f6f0e8;
-  --header-background: #f4ede4;
+  --main-bgColor: rgb(240, 231, 219);
+  --secondary-bgColor: rgb(246, 240, 232);
+  --header-background: rgb(244, 237, 228);
 
-  --text-header: #1a202c;
+  --text-header: rgb(26, 32, 44);
 
   //buttons
   --button-outlined-textColor: none;
   --button-outlined-bgColor: rgb(213, 85, 164);
-  --button-outlined-bgColor-hover: #4fd1c5;
-  --button-outlined-bgColor-active: #38b2ac;
+  --button-outlined-bgColor-hover: rgb(79, 209, 197);
+  --button-outlined-bgColor-active: rgb(56, 178, 172);
 
   --button-textColor: rgb(213, 85, 164);
   --button-bgColor: none;
@@ -45,25 +49,25 @@ code {
   --button-bgColor-hover-active: rgba(56, 178, 172, 0.7);
   //buttons
 
-
   //modals
+
   //modals
 }
 
 :root[data-theme="dark"] {
-  --main-bgColor: #202022;
-  --secondary-bgColor: #323234;
+  --main-bgColor: rgb(32, 32, 34);
+  --secondary-bgColor: rgb(50, 50, 52);
   --header-background: rgba(32, 32, 34, 0.5);
 
-  --text-header: #ededed;
+  --text-header: rgb(237, 237, 237);
 
   //buttons
   --button-outlined-textColor: none;
-  --button-outlined-bgColor: #319795;
-  --button-outlined-bgColor-hover: #2c7a7b;
-  --button-outlined-bgColor-active: #285e61;
+  --button-outlined-bgColor: rgb(49, 151, 149);
+  --button-outlined-bgColor-hover: rgb(44, 122, 123);
+  --button-outlined-bgColor-active: rgb(40, 94, 97);
 
-  --button-textColor: #319795;
+  --button-textColor: rgb(49, 151, 149);
   --button-bgColor: none;
   --button-bgColor-hover: rgba(44, 122, 123, 0.7);
   --button-bgColor-hover-active: rgba(40, 94, 97, 0.7);

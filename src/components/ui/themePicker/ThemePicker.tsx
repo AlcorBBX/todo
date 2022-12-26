@@ -4,6 +4,7 @@ export const ThemePicker = ({ value, onChange }: any) => {
   return (
     <>
       <label className={styles.switch} htmlFor='toggler'>
+      <p>темная тема: </p>
         <input
           id='toggler'
           type='checkbox'

@@ -2,12 +2,16 @@
   width: 100%;
   padding: 5px;
   border: none;
-  background-color: #0079bf;
+  background-color: var(--button-outlined-bgColor);
   color: white;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    background-color: #0065a0;
+    background-color: var(--button-outlined-bgColor-hover);
+  }
+
+  &:active {
+    background-color: var(--button-outlined-bgColor-active);
   }
 }

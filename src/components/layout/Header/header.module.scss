@@ -1,9 +1,16 @@
 .header {
   height: 55px;
-  padding: 10px;
   background: var(--header-background);
   margin-bottom: 50px;
-  
+}
 
-  
+.container {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--text-header);
 }
