@@ -4,7 +4,6 @@ import { OverlayingModal } from "../overlaying/OverlayingModal";
 import styles from "./main-modal.module.scss";
 
 interface IMainModalProps {
-  // children: (props: ModalChildProps) => React.ReactElement;
   children: React.ReactNode;
   refEl: React.RefObject<HTMLDivElement>;
   anchorEl: HTMLElement | null;
@@ -44,7 +43,7 @@ export const Header = ({ title, onClose }: IHeaderProps) => {
     <div className={styles.header}>
       <p></p>
       <p>{title}</p>
-      <CancelButton onClick={() => onClose()}/>
+      <CancelButton onClick={() => onClose()} />
     </div>
   );
 };

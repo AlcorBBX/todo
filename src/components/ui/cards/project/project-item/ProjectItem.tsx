@@ -46,7 +46,6 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
             onClick={() => {
               deleteProjectId();
             }}
-            style={{ color: "orange" }}
           />
         </div>
       </div>

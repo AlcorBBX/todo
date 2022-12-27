@@ -10,9 +10,9 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.projects}>
-        <ProjectCategory title='Избранное' tooltipText='Избранное'>
+        {/* <ProjectCategory title='Избранное' tooltipText='Избранное'>
           <ProjectCard projects={projects} />
-        </ProjectCategory>
+        </ProjectCategory> */}
         <ProjectCategory
           title='Рабочая площадка'
           tooltipText='Твоя рабочая площадка'

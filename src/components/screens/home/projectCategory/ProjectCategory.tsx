@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from "react";
+import { Section } from "../../..";
 import { useOutside } from "../../../../hooks";
 import { MainModal, NewProjectButton, Tooltip } from "../../../ui";
 
@@ -20,7 +21,7 @@ export const ProjectCategory: FC<PropsWithChildren<IProjectCategoryProps>> = ({
     setAnchorEl(e.currentTarget);
   };
   return (
-    <>
+    <Section>
       <div>
         <Tooltip text={tooltipText}>
           {props => (
@@ -44,6 +45,6 @@ export const ProjectCategory: FC<PropsWithChildren<IProjectCategoryProps>> = ({
           </MainModal>
         </div>
       </div>
-    </>
+    </Section>
   );
 };
