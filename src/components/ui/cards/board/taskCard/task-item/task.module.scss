@@ -22,3 +22,22 @@
     height: 500px;
   }
 }
+
+@media screen and (max-height: 650px) {
+  .contentModal {
+    height: 60%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contentModal {
+    // width: 300px;
+  }
+}
+
+@media screen and (max-height: 250px) {
+  .contentModal {
+    height: 10px;
+    // width: 600px;
+  }
+}
