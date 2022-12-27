@@ -1,5 +1,5 @@
 import React from "react";
-import { OverlayingModal, MainModal } from "../../../..";
+import { MainModal } from "../../../..";
 import { useOutside } from "../../../../../../hooks";
 import { ITask } from "../../../../../../types/task.interface";
 import styles from "./task.module.scss";
@@ -32,8 +32,10 @@ export const TaskItem = ({ task }: ITaskItemProps) => {
         title='Task info'
         setAnchorEl={setAnchorEl}
       >
-        <NameTaskModal task={task} />
-        <DescriptionTaskModal />
+        <div className={styles.contentModal}>
+          <NameTaskModal task={task} />
+          <DescriptionTaskModal />
+        </div>
       </MainModal>
     </div>
   );

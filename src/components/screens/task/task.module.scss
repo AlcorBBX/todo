@@ -1,4 +1,30 @@
-.task{
+.task {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 980px) {
+  .task {
+    // width: 100%;
+    padding: 0% 5%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .task {
+    padding: 0% 5%;
+
+    > div {
+      width: 30%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .task {
+    flex-direction: column;
+    > div {
+      width: 95%;
+    }
+  }
 }

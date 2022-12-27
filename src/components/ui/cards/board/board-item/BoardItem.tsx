@@ -85,7 +85,7 @@ export const BoardHeader = memo(({ title }: IBoardHeader) => {
     <>
       <div className={styles.header}>
         <HiddenField placeholder={title} />
-        <p>...</p>
+        {/* <p>...</p> */}
       </div>
     </>
   );

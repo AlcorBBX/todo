@@ -6,3 +6,19 @@
   cursor: pointer;
   margin-bottom: 5px;
 }
+
+.contentModal {
+  min-width: 200px;
+  width: 500px;
+  min-height: 200px;
+  height: 500px;
+}
+
+@media screen and (max-width: 980px) {
+  .contentModal {
+    min-width: 200px;
+    width: 60%;
+    min-height: 200px;
+    height: 500px;
+  }
+}
