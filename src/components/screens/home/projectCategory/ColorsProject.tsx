@@ -1,4 +1,4 @@
-import styles from "./project-modal.module.scss";
+import styles from "./content-modal.module.scss";
 
 interface IColorsProject {
   color: string;

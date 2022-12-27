@@ -1,12 +1,22 @@
 .content {
   overflow-y: auto;
 
+  width: 300px;
+  min-height: 200px;
+  max-height: 500px;
+
   p {
     font-size: 12px;
     font-weight: 700;
     line-height: 16px;
     margin-bottom: 4px;
     margin-top: 12px;
+  }
+
+  div {
+    input {
+      width: 50%;
+    }
   }
 }
 .colorTheme {
@@ -22,4 +32,8 @@
   width: 50px;
   height: 40px;
   cursor: pointer;
+}
+
+.buttons {
+  margin-top: 15px;
 }

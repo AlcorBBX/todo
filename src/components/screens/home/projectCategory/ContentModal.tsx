@@ -1,10 +1,17 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { localStorageWrapper } from "../../../../helpers/storage";
+import { useTypedSelector } from "../../../../hooks";
+import { addNewProject } from "../../../../store/todoProject/project-actions";
 import { Field, MainButton } from "../../../ui";
-import { ColorsProject } from "../../../ui/modals/project/ColorsProject";
+import { ColorsProject } from "./ColorsProject";
 
 import styles from "./content-modal.module.scss";
 
 export const ContentModaL = () => {
+  const { projects } = useTypedSelector(state => state.projects);
+  const dispatch = useDispatch();
+
   const [color, setColor] = useState("0079bf");
 
   const [inputValue, setInputValue] = useState<string>("");
@@ -16,7 +23,30 @@ export const ContentModaL = () => {
     !inputValue ? setError("Укажите название доски") : setError("");
   }, [inputValue]);
 
-  const createNewProject = () => {};
+  const textRef = useRef("");
+  textRef.current = inputValue;
+  const createNewProject = () => {
+    if (textRef.current) {
+      const newProject = [...projects];
+      const id = Date.now() * 2;
+      newProject.push({
+        id: id,
+        name: textRef.current,
+        backgroundColor: color,
+      });
+
+      localStorageWrapper.set("projects", newProject);
+      dispatch(
+        addNewProject({
+          id: id,
+          name: textRef.current,
+          backgroundColor: color,
+        })
+      );
+      setInputValue("");
+      // setAnchorEl(null);
+    }
+  };
 
   return (
     <>
@@ -30,6 +60,8 @@ export const ContentModaL = () => {
         </div>
         <div className={styles.input}>
           <Field
+            title='Заголовок доски'
+            require={true}
             ref={inputRef}
             value={inputValue}
             setValue={setInputValue}
@@ -37,11 +69,11 @@ export const ContentModaL = () => {
           />
         </div>
         {/* <div className={styles.tagsDropdown}>
-                <select>
-                  <option>Рабочее пространство</option>
-                  <option>Избранное</option>
-                </select>
-              </div> */}
+              <select>
+                <option>Рабочее пространство</option>
+                <option>Избранное</option>
+              </select>
+            </div> */}
         <div className={styles.buttons}>
           <MainButton onClick={() => createNewProject()}>Создать</MainButton>
         </div>

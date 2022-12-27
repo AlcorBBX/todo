@@ -7,15 +7,17 @@ interface IFieldProps extends IField {
   error?: string;
   type?: string;
   value?: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>
+  title: string;
+  require?: boolean;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const Field = forwardRef<HTMLInputElement, IFieldProps>(
-  ({ error, type = "text", value, setValue }, ref) => {
+  ({ error, type = "text", value, title, require = false, setValue }, ref) => {
     return (
       <div className={styles.field}>
         <p className={styles.fieldName}>
-          Заголовок доски <span>*</span>
+          {title} {require && <span style={{ color: "red" }}>*</span>}
         </p>
         <input
           ref={ref}
@@ -23,7 +25,7 @@ export const Field = forwardRef<HTMLInputElement, IFieldProps>(
           value={value}
           onChange={e => setValue(e.target.value)}
         />
-        {error && <div>{error}</div>}
+        {error && <div className={styles.error}>{error}</div>}
       </div>
     );
   }

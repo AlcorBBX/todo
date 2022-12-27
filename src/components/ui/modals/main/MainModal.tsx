@@ -1,3 +1,4 @@
+import { CancelButton } from "../..";
 import { OverlayingModal } from "../overlaying/OverlayingModal";
 
 import styles from "./main-modal.module.scss";
@@ -43,7 +44,7 @@ export const Header = ({ title, onClose }: IHeaderProps) => {
     <div className={styles.header}>
       <p></p>
       <p>{title}</p>
-      <button onClick={() => onClose()}>X</button>
+      <CancelButton onClick={() => onClose()}/>
     </div>
   );
 };
