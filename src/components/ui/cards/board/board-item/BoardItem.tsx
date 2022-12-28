@@ -1,9 +1,9 @@
 import { memo, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { HiddenField } from "../../..";
 import { FooterActions } from "./board-actions/FooterActions";
 
-import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { addNewTask } from "../../../../../store/todoTask/task-actions";
 import { useOutside, useTypedSelector } from "../../../../../hooks";
 import { localStorageWrapper } from "../../../../../helpers/storage";
@@ -22,10 +22,8 @@ export const BoardItem = ({ children, title }: BoardItemProps) => {
 
   const { ref, anchorEl, setAnchorEl } = useOutside();
 
-  console.log(anchorEl);
   const { tasks } = useTypedSelector(state => state.todo);
 
-  const [isShow, setIsShow] = useState<boolean>(false);
   const [text, setText] = useState<string>("");
 
   const textRef = useRef("");
