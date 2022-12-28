@@ -68,12 +68,6 @@ export const ContentModaL = () => {
             error={error}
           />
         </div>
-        {/* <div className={styles.tagsDropdown}>
-              <select>
-                <option>Рабочее пространство</option>
-                <option>Избранное</option>
-              </select>
-            </div> */}
         <div className={styles.buttons}>
           <MainButton onClick={() => createNewProject()}>Создать</MainButton>
         </div>

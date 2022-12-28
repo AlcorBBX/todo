@@ -1,18 +1,26 @@
 import styles from "./new-task.module.scss";
 
 interface INewTask {
-  show: boolean;
-  setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
+  anchorEl: HTMLElement | null;
+  setAnchorEl: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   onClickHandler(): void;
 }
-export const NewTask = ({ show, setIsShow, onClickHandler }: INewTask) => {
+export const NewTask = ({
+  anchorEl,
+  setAnchorEl,
+  onClickHandler,
+}: INewTask) => {
   return (
     <>
-      <button className={styles.button} onClick={() => setIsShow(v => !v)}>
-        {!show ? "+ Добавить новую карточку" : "Отмена"}
+      <button
+        className={styles.button}
+        onClick={e => setAnchorEl(e.currentTarget)}
+      >
+        {/* {!anchorEl ? "+ Добавить новую карточку" : "Отмена"} */}
+        {!anchorEl && "+ Добавить новую карточку"}
       </button>
 
-      {show && (
+      {anchorEl && (
         <button
           className={styles.createButton}
           onClick={() => onClickHandler()}

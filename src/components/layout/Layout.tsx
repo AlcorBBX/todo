@@ -11,6 +11,8 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
+//To Do: will do animation without framer-motion
+
 export const Layout = ({ children, title }: ILayout) => {
   const t = `${title} - Lev Matisov`;
 

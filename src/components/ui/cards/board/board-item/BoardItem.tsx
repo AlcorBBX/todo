@@ -5,7 +5,7 @@ import { FooterActions } from "./board-actions/FooterActions";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addNewTask } from "../../../../../store/todoTask/task-actions";
-import { useTypedSelector } from "../../../../../hooks";
+import { useOutside, useTypedSelector } from "../../../../../hooks";
 import { localStorageWrapper } from "../../../../../helpers/storage";
 
 import styles from "../board-card.module.scss";
@@ -20,6 +20,9 @@ interface BoardItemProps {
 export const BoardItem = ({ children, title }: BoardItemProps) => {
   const { id } = useParams();
 
+  const { ref, anchorEl, setAnchorEl } = useOutside();
+
+  console.log(anchorEl);
   const { tasks } = useTypedSelector(state => state.todo);
 
   const [isShow, setIsShow] = useState<boolean>(false);
@@ -58,18 +61,18 @@ export const BoardItem = ({ children, title }: BoardItemProps) => {
 
   return (
     <>
-      <div className={styles.boardCard}>
+      <div ref={ref} className={styles.boardCard}>
         <BoardHeader title={title} />
         <div className={styles.taskList}>
           {children({})}
 
-          {isShow && <SendInput text={text} setText={setText} />}
+          {anchorEl && <SendInput text={text} setText={setText} />}
         </div>
         <div className={styles.actions}>
           <FooterActions
             onClickHandler={onClickHandler}
-            show={isShow}
-            setIsShow={setIsShow}
+            anchorEl={anchorEl}
+            setAnchorEl={setAnchorEl}
           />
         </div>
       </div>

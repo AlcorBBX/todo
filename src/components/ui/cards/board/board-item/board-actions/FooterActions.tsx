@@ -1,24 +1,24 @@
 import { NewTask } from "./NewTask";
 
 interface INewTask {
-  show: boolean;
-  setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
+  anchorEl: HTMLElement | null;
+  setAnchorEl: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   onClickHandler(): void;
 }
 
 interface IFooterActions extends INewTask {}
 
 export const FooterActions = ({
-  show,
-  setIsShow,
+  anchorEl,
+  setAnchorEl,
   onClickHandler,
 }: IFooterActions) => {
   return (
     <>
       <NewTask
         onClickHandler={onClickHandler}
-        show={show}
-        setIsShow={setIsShow}
+        anchorEl={anchorEl}
+        setAnchorEl={setAnchorEl}
       />
     </>
   );

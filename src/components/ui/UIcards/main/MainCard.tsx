@@ -1,5 +1,13 @@
 import styles from "./main-card.module.scss";
 
-export const MainCard = () => {
-  return <></>;
+interface IMainCard {
+  children: React.ReactNode;
+}
+
+export const MainCard = ({ children }: IMainCard) => {
+  return (
+    <>
+      <div className={styles.card}>{children}</div>
+    </>
+  );
 };
