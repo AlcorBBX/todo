@@ -11,3 +11,93 @@
   border-radius: 5px;
   padding: 5px 10px;
 }
+
+// =================
+
+.cardR {
+  display: flex;
+  max-width: min-content;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  // background-color: black;
+  // border: 1px solid black;
+
+  border-radius: 10px;
+  // padding: 10px;
+
+  margin: 20px;
+}
+
+.head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.headWrapper {
+}
+
+.headTitle {
+  display: inline-block;
+  flex: 1;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.extra {
+}
+
+.cover {
+  > * {
+    display: block;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.body {
+  padding: 10px;
+  width: 230px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.actions {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: none;
+  border: 1px solid black;
+  display: flex;
+  border-radius: 0 0 10px 10px;
+
+  & > li {
+    padding: 10px 0px;
+    text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    cursor: pointer;
+
+    &:first-child {
+      border-left: 0;
+      border-radius: 0 0 0 10px;
+    }
+    &:last-child {
+      border-right: 0;
+      border-radius: 0 0 10px 0;
+    }
+
+    &:hover {
+      background-color: aliceblue;
+    }
+  }
+}
