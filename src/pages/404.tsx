@@ -1,10 +1,11 @@
 import { Layout } from "../components/layout/Layout";
+import { CoverBodyActionsCard } from "../components/ui";
 import { Card } from "../components/ui/UIcards/main/MainCard";
 
 export const NotFound = () => {
   return (
     <Layout>
-      <Card
+      <CoverBodyActionsCard
         // title='Card Title'
         cover={
           <img
@@ -16,7 +17,7 @@ export const NotFound = () => {
       >
         <h1>Not found</h1>
         <p>The page you&apos;re looking for was not found.</p>
-      </Card>
+      </CoverBodyActionsCard>
 
       <Card title='Card Title' actions={[<Actions />]}>
         <h1>Not found</h1>

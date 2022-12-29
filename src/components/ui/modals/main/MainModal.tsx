@@ -3,7 +3,7 @@ import { OverlayingModal } from "../overlaying/OverlayingModal";
 
 import styles from "./main-modal.module.scss";
 
-interface IMainModalProps {
+export interface IMainModalProps {
   children: React.ReactNode;
   refEl: React.RefObject<HTMLDivElement>;
   anchorEl: HTMLElement | null;

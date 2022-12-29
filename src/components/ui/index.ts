@@ -13,6 +13,7 @@ export { Tooltip } from "./tooltip/Tooltip";
 export { ProjectCard } from "./cards/project/ProjectCard";
 export { BoardCard } from "./cards/board/BoardCard";
 export { TaskCard } from "./cards/board/taskCard/TaskCard";
+export { CoverBodyActionsCard } from "./cards/coverBodyActions/CoverBodyActionsCard";
 
 //buttons
 export { MainButton } from "./buttons/main/MainButton";
