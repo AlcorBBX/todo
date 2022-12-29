@@ -3,18 +3,18 @@ import { MainModal } from "./MainModal";
 import "../../../../index.scss";
 
 export default {
-  title: "MainModal",
+  title: "Example/MainModal",
   component: MainModal,
-};
+} as ComponentMeta<typeof MainModal>;
 
 const Template: ComponentStory<typeof MainModal> = args => (
   <MainModal {...args} />
 );
 
 export const Default = Template.bind({});
-// Default.args = {
-//   title: "",
-//   anchorEl: null,
-//   setAnchorEl: null,
-//   refEl: refElement,
-// };
+Default.args = {
+  title: "Modal",
+  anchorEl: null,
+  // setAnchorEl: null,
+  // refEl: null,
+};
