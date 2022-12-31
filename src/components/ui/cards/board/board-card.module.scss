@@ -7,6 +7,12 @@
   margin: 5px;
 }
 
+@media screen and (max-width: 980px) {
+  .boardCard {
+    width: 100%;
+  }
+}
+
 .header {
   width: 100%;
   display: flex;
