@@ -19,8 +19,8 @@ export const Layout = ({ children, title }: ILayout) => {
   title && (document.title = `${t}`);
   return (
     <motion.article
-      initial='hidden'
-      animate='enter'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit='exit'
       variants={variants}
       transition={{ duration: 0.4, type: "easeInOut" }}
