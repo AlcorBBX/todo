@@ -5,17 +5,17 @@ import { TaskCard } from "./taskCard/TaskCard";
 export const BoardCard = () => {
   return (
     <>
-      <Section delay={0.4}>
+      <Section delay={0.1}>
         <BoardItem title='Queue'>
           {props => <TaskCard title='Queue' />}
         </BoardItem>
       </Section>
-      <Section delay={0.5}>
+      <Section delay={0.3}>
         <BoardItem title='Develop'>
           {props => <TaskCard title='Develop' />}
         </BoardItem>
       </Section>
-      <Section delay={0.6}>
+      <Section delay={0.5}>
         <BoardItem title='Done'>{props => <TaskCard title='Done' />}</BoardItem>
       </Section>
     </>
