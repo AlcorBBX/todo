@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Layout } from "../components/layout/Layout";
 import { Task } from "../components/screens";
@@ -8,14 +8,14 @@ import { ITask } from "../types/task.interface";
 
 export const TasksPage = () => {
   const dispatch = useDispatch();
-  const localStorageTasks = localStorageWrapper.get<ITask[]>("tasks");
 
-  useLayoutEffect(() => {
-    return () => {
+  useEffect(() => {
+    const localStorageTasks = localStorageWrapper.get<ITask[]>("tasks");
+    setTimeout(() => {
       if (localStorageTasks) dispatch(initialTasks(localStorageTasks));
       else console.log("localStorage is empty");
-    };
-  }, []);
+    }, 1000);
+  });
 
   return (
     <Layout title='Tasks'>

@@ -21,7 +21,7 @@ export const ProjectCategory: FC<PropsWithChildren<IProjectCategoryProps>> = ({
     setAnchorEl(e.currentTarget);
   };
   return (
-    <Section>
+    <Section delay={0.5}>
       <div>
         <Tooltip text={tooltipText}>
           {props => (

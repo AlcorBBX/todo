@@ -12,12 +12,9 @@ export const HomePage = () => {
   useEffect(() => {
     const localStorageProjects =
       localStorageWrapper.get<IProject[]>("projects");
-    console.log(`Before ${localStorageProjects}`);
-
     setTimeout(() => {
       if (localStorageProjects) dispatch(initialProjects(localStorageProjects));
       else console.log("localStorage is empty");
-      console.log(`After ${localStorageProjects}`);
     }, 1000);
   });
 
