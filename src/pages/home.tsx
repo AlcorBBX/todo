@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Layout } from "../components/layout/Layout";
 import { Home } from "../components/screens";
@@ -11,12 +11,13 @@ export const HomePage = () => {
 
   const localStorageProjects = localStorageWrapper.get<IProject[]>("projects");
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     return () => {
+      console.log(localStorageProjects)
       if (localStorageProjects) dispatch(initialProjects(localStorageProjects));
       else console.log("localStorage is empty");
     };
-  }, []);
+  }, [localStorageProjects]);
   return (
     <Layout title="Projects">
       <Home />
