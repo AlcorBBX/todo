@@ -1,29 +1,36 @@
-import { ITaskInfo } from "../../../types/task.interface";
+import { ITaskInfo, Comment, SubTask } from "./task-info.interface";
 
 export const initialTasksInfo = (payload: ITaskInfo[]) => {
   return {
-    type: "INITIAL_TASKS",
+    type: "INITIAL_TASKS_INFO",
     payload,
   };
 };
 
-export const UpdateDescription = (payload: any) => {
+export const UpdateDescription = (payload: string) => {
   return {
-    type: "",
-    payload
-  }
-}
+    type: "UPDATE_DESCRIPTION",
+    payload,
+  };
+};
 
-export const AddComment = (payload: any) => {
+export const AddNewComment = (payload: Comment) => {
   return {
-    type: "",
-    payload
-  }
-}
+    type: "ADD_NEW_COMMENT",
+    payload,
+  };
+};
 
-export const UpdateTaskTitle = (payload: any) => {
+export const UpdateTaskTitle = (payload: string) => {
   return {
-    type: "",
-    payload
-  }
-}
+    type: "UPDATE_TASK_TITLE",
+    payload,
+  };
+};
+
+export const addNewSubTask = (payload: SubTask) => {
+  return {
+    type: "ADD_NEW_SUB_TASK",
+    payload,
+  };
+};

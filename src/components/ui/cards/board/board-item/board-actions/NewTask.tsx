@@ -16,7 +16,6 @@ export const NewTask = ({
         className={styles.button}
         onClick={e => setAnchorEl(e.currentTarget)}
       >
-        {/* {!anchorEl ? "+ Добавить новую карточку" : "Отмена"} */}
         {!anchorEl && "+ Добавить новую карточку"}
       </button>
 

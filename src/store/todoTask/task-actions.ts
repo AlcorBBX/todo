@@ -14,6 +14,14 @@ export const addNewTask = (payload: ITask) => {
   };
 };
 
+
+export const updateTaskName = (payload: string) => {
+  return {
+    type: "UPDATE_TASK_NAME",
+    payload,
+  };
+};
+
 export const dragEnterTask = (payload: number) => {
   return {
     type: "DRAG_TASK",
@@ -22,3 +30,10 @@ export const dragEnterTask = (payload: number) => {
 };
 
 // ----------------------------------------------------
+
+export const updateBoardName = (payload: string) => {
+  return {
+    type: "UPDATE_BOARD_NAME",
+    payload,
+  };
+};

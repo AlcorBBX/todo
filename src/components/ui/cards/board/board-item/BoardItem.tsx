@@ -1,9 +1,9 @@
 import { memo, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
 import { HiddenField } from "../../..";
 import { FooterActions } from "./board-actions/FooterActions";
-
 import { addNewTask } from "../../../../../store/todoTask/task-actions";
 import { useOutside, useTypedSelector } from "../../../../../hooks";
 import { localStorageWrapper } from "../../../../../helpers/storage";
@@ -86,7 +86,6 @@ export const BoardHeader = memo(({ title }: IBoardHeader) => {
     <>
       <div className={styles.header}>
         <HiddenField placeholder={title} />
-        {/* <p>...</p> */}
       </div>
     </>
   );

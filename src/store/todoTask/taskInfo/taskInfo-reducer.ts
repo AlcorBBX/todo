@@ -1,4 +1,4 @@
-import { ITaskInfo } from "../../../types/task.interface";
+import { ITaskInfo, TaskInfoAction } from "./task-info.interface";
 
 interface ITaskInfoState {
   tasksInfo: ITaskInfo[];
@@ -12,28 +12,14 @@ const TaskInfoState: ITaskInfoState = {
   loading: false,
 };
 
-type TypeAction = {
-  type: string;
-  payload: any;
-};
-
 export const taskInfoReducer = (
   state = TaskInfoState,
-  action: TypeAction
+  action: TaskInfoAction
 ): ITaskInfoState => {
   switch (action.type) {
-    case "INITIAL_TASKS": {
-      state.tasksInfo = action.payload;
-      return {
-        ...state,
-      };
-    }
-
-    case "ADD_TASK": {
+    case "INITIAL_TASKS_INFO": {
       try {
-        const newList = state.tasksInfo;
-        newList.push(action.payload);
-        state.tasksInfo = newList;
+        state.tasksInfo = action.payload;
       } catch (e) {
         console.log(e);
       }
@@ -41,12 +27,40 @@ export const taskInfoReducer = (
         ...state,
       };
     }
-    case "DELETE_TASK": {
-      const newList = state.tasksInfo;
-      const result = newList.filter(
-        taskInfo => taskInfo.id !== action.payload
-      );
-      state.tasksInfo = result;
+
+    case "UPDATE_DESCRIPTION": {
+      try {
+        const newList = state.tasksInfo[1].description;
+      } catch (e) {
+        console.log(e);
+      }
+      return {
+        ...state,
+      };
+    }
+    case "ADD_NEW_COMMENT": {
+      try {
+      } catch (e) {
+        console.log(e);
+      }
+      return {
+        ...state,
+      };
+    }
+    case "UPDATE_TASK_TITLE": {
+      try {
+      } catch (e) {
+        console.log(e);
+      }
+      return {
+        ...state,
+      };
+    }
+    case "ADD_NEW_SUB_TASK": {
+      try {
+      } catch (e) {
+        console.log(e);
+      }
       return {
         ...state,
       };
