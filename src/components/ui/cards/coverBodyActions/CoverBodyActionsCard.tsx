@@ -1,40 +1,8 @@
-import { forwardRef } from 'react';
-import styles from './cover-body-actions.module.scss';
+import { forwardRef } from "react";
 
-export type CardType = "inner";
-export type CardSize = "default" | "small";
+import { CardProps } from "./cover-body-actions.interface";
 
-export interface CardTabListType {
-  key: string;
-  tab: React.ReactNode;
-  disabled?: boolean;
-}
-
-export interface CardProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
-  prefixCls?: string;
-  title?: React.ReactNode;
-  extra?: React.ReactNode;
-  bordered?: boolean;
-  headStyle?: React.CSSProperties;
-  bodyStyle?: React.CSSProperties;
-  style?: React.CSSProperties;
-  loading?: boolean;
-  hoverable?: boolean;
-  children?: React.ReactNode;
-  id?: string;
-  className?: string;
-  size?: CardSize;
-  type?: CardType;
-  cover?: React.ReactNode;
-  actions?: React.ReactNode[];
-  tabList?: CardTabListType[];
-  tabBarExtraContent?: React.ReactNode;
-  onTabChange?: (key: string) => void;
-  activeTabKey?: string;
-  defaultActiveTabKey?: string;
-  // tabProps?: TabsProps;
-}
+import styles from "./cover-body-actions.module.scss";
 
 const getAction = (actions: React.ReactNode[]) => {
   const actionList = actions.map((action, index) => (
@@ -98,7 +66,7 @@ export const CoverBodyActionsCard = forwardRef(
       ) : null;
 
     return (
-      <div ref={ref} className={styles.cardR}>
+      <div ref={ref} {...others} className={styles.cardR}>
         {head}
         {coverDom} {/* Обложка вверху каточки */}
         {body}

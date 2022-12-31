@@ -11,14 +11,15 @@ export const TaskCard = ({ title }: ITaskCardProps) => {
   const { tasks } = useTypedSelector(state => state.todo);
   return (
     <>
-      {tasks.length &&
-        tasks.map(
-          task =>
-            task.type.toLowerCase() === title.toLowerCase() &&
-            task.projectId === Number(id) && (
-              <TaskItem task={task} key={task.id} />
-            )
-        )}
+      {tasks.length
+        ? tasks.map(
+            task =>
+              task.type.toLowerCase() === title.toLowerCase() &&
+              task.projectId === Number(id) && (
+                <TaskItem task={task} key={task.id} />
+              )
+          )
+        : null}
     </>
   );
 };
