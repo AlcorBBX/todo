@@ -1,11 +1,18 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext, themes } from "../../../contexts/ThemeContext";
 import { ThemePicker } from "../../ui";
+import { ChristmasRope } from "./ChristmasRope";
 
 import styles from "./header.module.scss";
 
 export const Header = () => {
   const history = useNavigate();
+  const [width, setWidth] = useState(1200);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -23,6 +30,7 @@ export const Header = () => {
           )}
         </ThemeContext.Consumer>
       </div>
+      {width > 615 ? <ChristmasRope /> : ""}
     </header>
   );
 };
