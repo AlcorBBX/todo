@@ -1,34 +1,27 @@
 import { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 
+const getRopes = (actions: number) => {
+  let ropesList = [];
+  for (let i = 0; i < actions; i++) {
+    ropesList.push(<li key={`rope-${i}`}></li>);
+  }
+  return ropesList;
+};
+
 export const ChristmasRope = () => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const lampWidth = 70;
+    setWidth(Math.round(window.innerWidth / lampWidth));
   }, []);
+
+  const actionDom = <ul className={styles.lightRope}>{getRopes(width)}</ul>;
+
   return (
     <>
-      {width > 615 ? (
-        <ul className={styles.lightRope}>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      ) : (
-        <ul className={styles.lightRope}>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      )}
+      {actionDom}
     </>
   );
 };
