@@ -8,7 +8,7 @@ import styles from "./header.module.scss";
 
 export const Header = () => {
   const history = useNavigate();
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -30,7 +30,7 @@ export const Header = () => {
           )}
         </ThemeContext.Consumer>
       </div>
-      {width > 615 ? <ChristmasRope /> : ""}
+      <ChristmasRope />
     </header>
   );
 };
