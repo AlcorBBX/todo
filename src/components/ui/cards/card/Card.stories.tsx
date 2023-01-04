@@ -1,15 +1,15 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import "../../../../index.scss";
-import { CoverBodyActionsCard } from "./CoverBodyActionsCard";
+import { Card } from "./Card";
 
 export default {
   title: "Example/Cards",
-  component: CoverBodyActionsCard,
-} as ComponentMeta<typeof CoverBodyActionsCard>;
+  component: Card,
+} as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof CoverBodyActionsCard> = args => (
-  <CoverBodyActionsCard {...args} />
+const Template: ComponentStory<typeof Card> = args => (
+  <Card {...args} />
 );
 
 //====================== ARGS ==========================

@@ -15,7 +15,7 @@ export const HomePage = () => {
     setTimeout(() => {
       if (localStorageProjects) dispatch(initialProjects(localStorageProjects));
       else console.log("localStorage is empty");
-    }, 1000);
+    }, 10000);
   });
 
   return (

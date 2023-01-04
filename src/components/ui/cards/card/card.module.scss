@@ -1,0 +1,75 @@
+.card {
+  display: flex;
+  max-width: min-content;
+  flex-direction: column;
+  background-color: rgb(94, 94, 94);
+
+  border-radius: 10px;
+
+  .head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .headWrapper {
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+    }
+
+    .headTitle {
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .extra {
+    }
+  }
+
+  .cover {
+    > * {
+      display: block;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  .body {
+    padding: 10px;
+    width: 230px;
+  }
+
+  .actions {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: none;
+    display: flex;
+    border-radius: 0 0 10px 10px;
+
+    & > li {
+      padding: 10px 0px;
+      text-align: center;
+      cursor: pointer;
+
+      &:first-child {
+        border-left: 0;
+        border-radius: 0 0 0 10px;
+      }
+      &:last-child {
+        border-right: 0;
+        border-radius: 0 0 10px 0;
+      }
+
+      &:hover {
+        background-color: aliceblue;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChromecast } from 'react-icons/fa';
+import { FaChromecast } from "react-icons/fa";
 import { MainModal } from "../../../..";
 import { useOutside } from "../../../../../../hooks";
 import { ITask } from "../../../../../../types/task.interface";
@@ -13,10 +13,23 @@ interface ITaskItemProps {
 
 export const TaskItem = ({ task }: ITaskItemProps) => {
   const { ref, anchorEl, setAnchorEl } = useOutside();
-
   const OpenModal = (e: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(e.currentTarget);
   };
+
+  const Modal: JSX.Element = (
+    <MainModal
+      refEl={ref}
+      anchorEl={anchorEl}
+      title='Task info'
+      setAnchorEl={setAnchorEl}
+    >
+      <div className={styles.contentModal}>
+        <NameTaskModal task={task} />
+        <DescriptionTaskModal />
+      </div>
+    </MainModal>
+  );
 
   return (
     <div className={styles.card}>
@@ -28,18 +41,7 @@ export const TaskItem = ({ task }: ITaskItemProps) => {
       >
         {task.title}
       </p>
-
-      <MainModal
-        refEl={ref}
-        anchorEl={anchorEl}
-        title='Task info'
-        setAnchorEl={setAnchorEl}
-      >
-        <div className={styles.contentModal}>
-          <NameTaskModal task={task} />
-          <DescriptionTaskModal />
-        </div>
-      </MainModal>
+      {Modal}
     </div>
   );
 };
@@ -107,7 +109,9 @@ interface ICardModalItem {
 export const Card = ({ children, title }: ICardModalItem) => {
   return (
     <div className={styles.cardModalItem}>
-      <div><FaChromecast className={styles.icon}/></div>
+      <div>
+        <FaChromecast className={styles.icon} />
+      </div>
       <div>
         {title && <p className={styles.cardModalTitle}>{title}</p>}
         <div>{children}</div>

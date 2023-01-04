@@ -1,16 +1,16 @@
 export interface ITaskInfo {
   id: number;
-  description: string;
-  comments: Comment[];
-  subTasks: SubTask[];
-  workingTime: number;
-  priority: Priority;
-  status: Status;
+  description?: string;
+  comments?: Comment[];
+  subTasks?: SubTask[];
+  workingTime?: number;
+  priority?: string;
+  status?: string;
   // files:
 
-  createAt: Date;
-  updateAt: Date;
-  completeAt: Date;
+  createAt?: Date;
+  updateAt?: Date;
+  completeAt?: Date;
 
   taskId: number;
 }
@@ -47,10 +47,40 @@ export type SubTask = {
 
 export enum taskInfoActions {
   initialTasksInfo = "INITIAL_TASKS_INFO",
-  updateDescription = "UPDATE_DESCRIPTION",
+  updateDescription = "UPDATE_TASK_DESCRIPTION",
   addNewComment = "ADD_NEW_COMMENT",
   updateTaskTitle = "UPDATE_TASK_TITLE",
   addNewSubTask = "ADD_NEW_SUB_TASK",
+  removeTask = "REMOVE_TASK",
+
+  updateName = "UPDATE_TASK_NAME",
+  updateStatus = "UPDATE_TASK_STATUS",
+  updatePriority = "UPDATE_TASK_PRIORITY",
+}
+
+type updatePayload = {
+  id: number;
+  value: string;
+  taskId: number;
+};
+export interface IUpdateName {
+  type: taskInfoActions.updateName;
+  payload: updatePayload;
+}
+
+export interface IUpdateStatus {
+  type: taskInfoActions.updateStatus;
+  payload: updatePayload;
+}
+
+export interface IUpdatePriority {
+  type: taskInfoActions.updatePriority;
+  payload: updatePayload;
+}
+
+export interface IRemoveTask {
+  type: taskInfoActions.removeTask;
+  payload: number;
 }
 
 export interface InitialTasksInfo {
@@ -59,7 +89,7 @@ export interface InitialTasksInfo {
 }
 export interface IUpdateDescription {
   type: taskInfoActions.updateDescription;
-  payload: Description;
+  payload: updatePayload;
 }
 export interface IAddNewComment {
   type: taskInfoActions.addNewComment;
@@ -79,4 +109,8 @@ export type TaskInfoAction =
   | IUpdateDescription
   | IAddNewSubTask
   | IAddNewComment
-  | IUpdateTaskTitle;
+  | IUpdateTaskTitle
+  | IRemoveTask
+  | IUpdatePriority
+  | IUpdateStatus
+  | IUpdateName;

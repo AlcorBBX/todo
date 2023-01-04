@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 
 const getRopes = (actions: number) => {
-  let ropesList = [];
+  let lampsList = [];
   for (let i = 0; i < actions; i++) {
-    ropesList.push(<li key={`rope-${i}`}></li>);
+    lampsList.push(<li key={`rope-${i}`}></li>);
   }
-  return ropesList;
+  return lampsList;
 };
 
 export const ChristmasRope = () => {
@@ -17,11 +17,11 @@ export const ChristmasRope = () => {
     setWidth(Math.round(window.innerWidth / lampWidth));
   }, []);
 
-  const actionDom = <ul className={styles.lightRope}>{getRopes(width)}</ul>;
+  const lampsDom = <ul className={styles.lightRope}>{getRopes(width)}</ul>;
 
   return (
     <>
-      {actionDom}
+      {lampsDom}
     </>
   );
 };

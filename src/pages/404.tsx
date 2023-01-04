@@ -1,11 +1,18 @@
+import { useState } from "react";
 import { Layout } from "../components/layout/Layout";
-import { CoverBodyActionsCard } from "../components/ui";
+import { Card } from "../components/ui";
 
 export const NotFound = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+
   return (
     <Layout>
-      <CoverBodyActionsCard
-        // title='Card Title'
+      <Card
+        loading={loading}
         cover={
           <img
             alt='example'
@@ -16,9 +23,9 @@ export const NotFound = () => {
       >
         <h1>Not found</h1>
         <p>The page you&apos;re looking for was not found.</p>
-      </CoverBodyActionsCard>
+      </Card>
 
-      {/* <Card title='Card Title' actions={[<Actions />]}>
+      <Card title='Card Title' actions={[<Actions />]}>
         <h1>Not found</h1>
         <p>The page you&apos;re looking for was not found.</p>
       </Card>
@@ -32,12 +39,12 @@ export const NotFound = () => {
         <p>The page you&apos;re looking for was not found.</p>
       </Card>
 
-      <Card>
+      <Card loading={loading}>
         <h1>Not found</h1>
         <p>The page you&apos;re looking for was not found.</p>
       </Card>
 
-      <Card>sdf</Card> */}
+      <Card style={{backgroundColor: 'white'}} loading={loading}><p>Body fsdfhj</p></Card>
     </Layout>
   );
 };

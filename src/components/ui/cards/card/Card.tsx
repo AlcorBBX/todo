@@ -1,8 +1,10 @@
+import clsx from "clsx";
 import { forwardRef } from "react";
+import { SkeletonText } from "../../skeleton/Skeleton";
 
-import { CardProps } from "./cover-body-actions.interface";
+import { CardProps } from "./card.type";
 
-import styles from "./cover-body-actions.module.scss";
+import styles from "./card.module.scss";
 
 const getAction = (actions: React.ReactNode[]) => {
   const actionList = actions.map((action, index) => (
@@ -13,17 +15,17 @@ const getAction = (actions: React.ReactNode[]) => {
   return actionList;
 };
 
-export const CoverBodyActionsCard = forwardRef(
+export const Card = forwardRef(
   (props: CardProps, ref: React.Ref<HTMLDivElement>) => {
     const {
       prefixCls: customizePrefixCls,
-      className,
+      // className,
       extra,
       headStyle = {},
       bodyStyle = {},
       title,
       loading,
-      bordered = true,
+      bordered = false,
       size: customizeSize,
       type,
       cover,
@@ -37,7 +39,7 @@ export const CoverBodyActionsCard = forwardRef(
       ...others
     } = props;
 
-    const loadingBlock = <div>{children}</div>;
+    const loadingBlock = <SkeletonText />;
 
     let head: React.ReactNode;
     if (title || extra) {
@@ -65,8 +67,13 @@ export const CoverBodyActionsCard = forwardRef(
         <ul className={styles.actions}>{getAction(actions)}</ul>
       ) : null;
 
+    const classString = clsx({
+      cardBordered: bordered,
+      card: !bordered,
+    });
+
     return (
-      <div ref={ref} {...others} className={styles.cardR}>
+      <div ref={ref} {...others}>
         {head}
         {coverDom} {/* Обложка вверху каточки */}
         {body}

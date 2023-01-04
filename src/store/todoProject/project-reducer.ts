@@ -3,10 +3,12 @@ import { IProject } from "../../types/project.interface";
 interface IProjectState {
   projects: IProject[];
   payload?: any;
+  loading: boolean;
 };
 
 const projectState: IProjectState = {
   projects: [],
+  loading: true
 };
 
 type TypeAction = {
@@ -20,9 +22,11 @@ const projectReducer = (
 ): IProjectState => {
   switch (action.type) {
     case "INITIAL_PROJECTS": {
+      state.loading = true
       state.projects = action.payload;
       return {
         ...state,
+        loading: false
       };
     }
 
