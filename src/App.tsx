@@ -6,10 +6,12 @@ import { AppRouter } from "./routes/AppRouter";
 import "./App.scss";
 import { Header } from "./components/layout/Header/Header";
 import { firebaseConfig } from "./config/firebase/config";
+import { useInitialStorage } from "./hooks";
 
-initializeApp(firebaseConfig)
+initializeApp(firebaseConfig);
 
 function App() {
+  useInitialStorage();
   return (
     <div className='App'>
       <BrowserRouter>

@@ -3,6 +3,7 @@ import { FaChromecast } from "react-icons/fa";
 import { MainModal } from "../../../..";
 import { useOutside } from "../../../../../../hooks";
 import { ITask } from "../../../../../../types/task.interface";
+
 import styles from "./task.module.scss";
 
 interface ITaskItemProps {

@@ -10,10 +10,10 @@ export { DialogModal } from "./modals/dialog/DialogModal";
 export { Tooltip } from "./tooltip/Tooltip";
 
 //cards
-export { ProjectCard } from "./cards/project/ProjectCard";
 export { BoardCard } from "./cards/board/BoardCard";
 export { TaskCard } from "./cards/board/taskCard/TaskCard";
 export { Card } from "./cards/card/Card";
+export { ProjectCard } from "./cards/project-card/ProjectCard";
 
 //buttons
 export { MainButton } from "./buttons/main/MainButton";

@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { IProject } from "../../../../../types/project.interface";
-import { ProjectCard } from "../../../../ui/cards/project-card/ProjectCard";
+import { ProjectCard } from "../../../../ui";
 
 import styles from "./project-item.module.scss";
 

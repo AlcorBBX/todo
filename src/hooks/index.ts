@@ -7,4 +7,6 @@ export { useSessionStorageState } from "./useStorage";
 
 export { useLatest } from "./useLatest";
 
-export { makeDebouncedHook as useDebounce } from "./useDebounce"
+export { makeDebouncedHook as useDebounce } from "./useDebounce";
+
+export { useInitialStorage } from "./useInitialStorage";
