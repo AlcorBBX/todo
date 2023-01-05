@@ -1,2 +1,2 @@
 export { Home } from "./home/Home";
-export { Task } from "./task/Task";
+export { ToDo } from "./toDo/ToDo";

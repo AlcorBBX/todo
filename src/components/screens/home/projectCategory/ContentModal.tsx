@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { localStorageWrapper } from "../../../../helpers/storage";
 import { useTypedSelector } from "../../../../hooks";
+import { makeDebouncedHook } from "../../../../hooks/useDebounce";
 import { addNewProject } from "../../../../store/todoProject/project-actions";
 import { Field, MainButton } from "../../../ui";
 import { ColorsProject } from "./ColorsProject";
@@ -47,7 +48,6 @@ export const ContentModaL = () => {
       // setAnchorEl(null);
     }
   };
-
   return (
     <>
       <div className={styles.content}>
