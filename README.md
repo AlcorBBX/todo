@@ -30,7 +30,7 @@ $PROJECT_ROOT
     ├── pages         # Page components
     ├── providers     # Project providers
     ├── routes        # Navigation components
-    ├── store         # Resux store
+    ├── store         # Redux store
     ├── types         # Types
     ├── utils         # Utils
     ├── App.tsx       # 
