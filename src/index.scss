@@ -35,7 +35,6 @@ p {
   border-radius: 6px;
 }
 
-
 //TO DO: to do normal variables
 :root[data-theme="light"] {
   --main-bgColor: rgb(240, 231, 219);
@@ -78,11 +77,65 @@ p {
   --button-outlined-bgColor-hover: rgb(44, 122, 123);
   --button-outlined-bgColor-active: rgb(40, 94, 97);
 
-  --button-textColor: rgb(49, 151, 149);
+  --button-textColor: #319795;
   --button-bgColor: none;
   --button-bgColor-hover: rgba(44, 122, 123, 0.7);
   --button-bgColor-hover-active: rgba(40, 94, 97, 0.7);
   //buttons
+
+  //Brand Color
+  --brandColor: #81e6d9;
+
+  --colorPrimaryBg: #1c2827;
+  --colorPrimaryBgHover: #283f3d;
+  --colorPrimaryBorder: #35534f;
+  --colorPrimaryBorderHover: #45736d;
+  --colorPrimaryHover: #4fd1c5;
+  --colorPrimary: #4fd1c5; //buttons
+  --colorPrimaryActive: #5b9d94;
+  --colorPrimaryTextHover: #9fdcd2;
+  --colorPrimaryText: #71c7bb;
+  --colorPrimaryTextActive: #5b9d94;
+  //Brand Color
+
+  //Success Color
+  --successColor: #52c41a;
+
+  --colorSuccessText: #49aa19;
+  //Success Color
+
+  //Warning Color
+  --warningColor: #faad14;
+
+  --colorWarningBg: #2b2111;
+  --colorWarningText: #d89614;
+  --colorWarningTextHover: #e8b339;
+  --colorWarningTextActive: #aa7714;
+  //Warning Color
+
+  //Error Color
+  --errorColor: #ff4d4f;
+
+  --colorErrorBg: #2c1618;
+  --colorErrorText: #dc4446;
+  --colorErrorTextHover: #e86e6b;
+  --colorErrorTextActive: #ad393a;
+  //Error Color
+
+  //Info Color
+  --infoColor: #ff63c3;
+  //Info Color
+
+  //Neutral Color
+  --seedTextColor: #ededed;
+  --mainBackgroundColor: #202023;
+  --seedBackgroundColor: #323234;
+
+  --colorText: #ededed;
+  --colorTextSecondary: rgba(237, 237, 237, 0.65);
+  --colorTextTertiary: rgba(237, 237, 237, 0.45);
+  --colorTextQuaternary: rgba(237, 237, 237, 0.25);
+  //Neutral Color
 }
 
 // заголовки: #ededed
