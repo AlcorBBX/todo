@@ -12,8 +12,6 @@
   justify-content: space-between;
   align-items: center;
 
-  color: var(--text-header);
-
   h2 {
     cursor: pointer;
   }
@@ -27,7 +25,7 @@
 }
 
 .lightRope {
-width: 100%;
+  width: 100%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;

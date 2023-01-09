@@ -11,11 +11,11 @@
 
 .fieldName {
   span {
-    color: red;
+    color: var(--errorColor);
   }
 }
 
 .error {
   font-size: 12px;
-  color: var(--text-error);
+  color: var(--colorErrorText);
 }

@@ -1,13 +1,13 @@
 .button {
   width: 200px;
   height: 100px;
-  border: 3px dotted var(--button-outlined-bgColor);
+  border: 3px dotted var(--colorPrimary);
   background: none;
-  color: var(--text-header);
+  color: var(--colorText);
   cursor: pointer;
 
   &:hover {
-    background-color: var(--secondary-bgColor);
+    background-color: var(--seedBackgroundColor);
   }
 
   &:active {
