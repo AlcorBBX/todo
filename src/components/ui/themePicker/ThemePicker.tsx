@@ -15,6 +15,10 @@ export const ThemePicker = ({ value, onChange }: any) => {
         <span className={styles.slider} />
         <span className={styles.wave} />
       </label>
+      <div>
+        <img src="" alt=""/>
+        <img src="" alt=""/>
+      </div>
     </>
   );
 };

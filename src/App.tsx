@@ -11,7 +11,7 @@ import { useInitialStorage } from "./hooks";
 initializeApp(firebaseConfig);
 
 function App() {
-  useInitialStorage();
+  // useInitialStorage();
   return (
     <div className='App'>
       <BrowserRouter>

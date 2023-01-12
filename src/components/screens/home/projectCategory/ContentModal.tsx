@@ -27,15 +27,15 @@ export const ContentModaL = () => {
   textRef.current = inputValue;
   const createNewProject = () => {
     if (textRef.current) {
-      const newProject = [...projects];
+      // const newProject = [...projects];
       const id = Date.now() * 2;
-      newProject.push({
-        id: id,
-        name: textRef.current,
-        backgroundColor: color,
-      });
+      // newProject.push({
+      //   id: id,
+      //   name: textRef.current,
+      //   backgroundColor: color,
+      // });
 
-      localStorageWrapper.set("projects", newProject);
+      // localStorageWrapper.set("projects", newProject);
       dispatch(
         addNewProject({
           id: id,

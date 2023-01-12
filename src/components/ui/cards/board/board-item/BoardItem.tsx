@@ -34,16 +34,16 @@ export const BoardItem = ({ children, title }: BoardItemProps) => {
   const onClickHandler = () => {
     const inputText = textRef.current;
     if (inputText.length) {
-      const newProject = [...tasks];
+      // const newProject = [...tasks];
       const idR = Date.now() * 2;
-      newProject.push({
-        id: idR,
-        type: title,
-        title: inputText,
-        projectId: Number(id),
-      });
+      // newProject.push({
+      //   id: idR,
+      //   type: title,
+      //   title: inputText,
+      //   projectId: Number(id),
+      // });
 
-      localStorageWrapper.set("tasks", newProject);
+      // localStorageWrapper.set("tasks", newProject);
 
       dispatch(
         addNewTask({

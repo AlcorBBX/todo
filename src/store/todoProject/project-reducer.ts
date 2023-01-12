@@ -8,7 +8,7 @@ interface IProjectState {
 
 const projectState: IProjectState = {
   projects: [],
-  loading: true
+  loading: false
 };
 
 type TypeAction = {
