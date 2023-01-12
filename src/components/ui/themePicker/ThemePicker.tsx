@@ -1,24 +1,32 @@
 import styles from "./theme-picker.module.scss";
 
-export const ThemePicker = ({ value, onChange }: any) => {
+export interface ThemePickerProps {
+  value: boolean;
+  onChange: () => void;
+}
+
+export const ThemePicker = ({ value, onChange }: ThemePickerProps) => {
   return (
     <>
-      <label className={styles.switch} htmlFor='toggler'>
-      <p>темная тема: </p>
-        <input
-          id='toggler'
-          type='checkbox'
-          onClick={onChange}
-          checked={value}
-          readOnly
-        />
-        <span className={styles.slider} />
-        <span className={styles.wave} />
-      </label>
-      <div>
-        <img src="" alt=""/>
-        <img src="" alt=""/>
+      <div className={styles.card} onClick={onChange}>
+        <ThemeIcon value={value} />
       </div>
+    </>
+  );
+};
+
+interface ThemeIconProps {
+  value: boolean;
+}
+
+export const ThemeIcon = ({ value }: ThemeIconProps) => {
+  return (
+    <>
+      {value ? (
+        <img src='/icons/moon.png' alt='' />
+      ) : (
+        <img src='/icons/sun.png' alt='' />
+      )}
     </>
   );
 };

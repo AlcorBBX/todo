@@ -4,3 +4,26 @@
     margin-right: 15px;
   }
 }
+
+.card {
+  background-color: var(--bg);
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  img {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #fbd38d;
+}
+:root[data-theme="dark"] {
+  --bg: #805ad5;
+}
