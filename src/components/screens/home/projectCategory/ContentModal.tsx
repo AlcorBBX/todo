@@ -1,15 +1,15 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { memo, useCallback, useLayoutEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { localStorageWrapper } from "../../../../helpers/storage";
-import { useTypedSelector } from "../../../../hooks";
 import { addNewProject } from "../../../../store/todoProject/project-actions";
 import { Field, MainButton } from "../../../ui";
 import { ColorsProject } from "./ColorsProject";
 
 import styles from "./content-modal.module.scss";
 
+const ColorsProjectMemo = memo(ColorsProject);
+const MainButtonMemo = memo(MainButton);
+
 export const ContentModaL = () => {
-  const { projects } = useTypedSelector(state => state.projects);
   const dispatch = useDispatch();
 
   const [color, setColor] = useState("0079bf");
@@ -25,17 +25,9 @@ export const ContentModaL = () => {
 
   const textRef = useRef("");
   textRef.current = inputValue;
-  const createNewProject = () => {
+  const createNewProject = useCallback(() => {
     if (textRef.current) {
-      // const newProject = [...projects];
       const id = Date.now() * 2;
-      // newProject.push({
-      //   id: id,
-      //   name: textRef.current,
-      //   backgroundColor: color,
-      // });
-
-      // localStorageWrapper.set("projects", newProject);
       dispatch(
         addNewProject({
           id: id,
@@ -44,9 +36,8 @@ export const ContentModaL = () => {
         })
       );
       setInputValue("");
-      // setAnchorEl(null);
     }
-  };
+  }, [color]);
   return (
     <>
       <div className={styles.content}>
@@ -54,7 +45,7 @@ export const ContentModaL = () => {
           <p>Фон</p>
           <div className={styles.picturesTheme}></div>
           <div className={styles.colorTheme}>
-            <ColorsProject color={color} setColor={setColor} />
+            <ColorsProjectMemo color={color} setColor={setColor} />
           </div>
         </div>
         <div className={styles.input}>
@@ -68,7 +59,7 @@ export const ContentModaL = () => {
           />
         </div>
         <div className={styles.buttons}>
-          <MainButton onClick={() => createNewProject()}>Создать</MainButton>
+          <MainButtonMemo onClick={() => createNewProject()}>Создать</MainButtonMemo>
         </div>
       </div>
     </>
