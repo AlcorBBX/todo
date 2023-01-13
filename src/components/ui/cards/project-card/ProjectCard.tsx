@@ -4,7 +4,7 @@ import styles from "./project-card.module.scss";
 
 interface IProjectProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
-  extra: React.ReactNode;
+  extra?: React.ReactNode;
   backgroundColor: string | undefined;
   handleClick: () => void;
 }

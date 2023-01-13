@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { IProject } from "../../../../../types/project.interface";
-import { ProjectCard } from "../../../../ui";
+import { ProjectCard, Tooltip } from "../../../../ui";
 
 import styles from "./project-item.module.scss";
 
@@ -25,16 +25,32 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
   }, []);
 
   return (
-    <ProjectCardMemo
-      title={project.name}
-      extra={<DeleteProject/>}
-      className={styles.card}
-      handleClick={openProject}
-      backgroundColor={project.backgroundColor}
-    />
+    <>
+      <ProjectCardMemo
+        title={project.name}
+        // extra={<DeleteProject />}
+        className={styles.card}
+        handleClick={openProject}
+        backgroundColor={project.backgroundColor}
+      />
+    </>
   );
 };
 
 export const DeleteProject = () => {
-  return <p style={{zIndex: '99'}} onClick={() => console.log('1')}>X</p>
-}
+  return (
+    <>
+      <Tooltip text='Удалить проект?'>
+        {props => (
+          <p
+            {...props}
+            style={{ cursor: "pointer" }}
+            onClick={() => console.log("1")}
+          >
+            X
+          </p>
+        )}
+      </Tooltip>
+    </>
+  );
+};
