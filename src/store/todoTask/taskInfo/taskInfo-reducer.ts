@@ -2,6 +2,7 @@ import { ITaskInfo, TaskInfoAction } from "./task-info.interface";
 
 interface ITaskInfoState {
   tasksInfo: ITaskInfo[];
+  taskInfo?: ITaskInfo;
   error: any;
   loading: boolean;
 }
@@ -17,10 +18,11 @@ export const taskInfoReducer = (
   action: TaskInfoAction
 ): ITaskInfoState => {
   switch (action.type) {
-    case "INITIAL_TASKS_INFO":
-      return {
+    case "INITIAL_TASK_INFO":
+      
+    return {
         ...state,
-        tasksInfo: [...state.tasksInfo, ...action.payload],
+        // taskInfo: [...state.tasksInfo, ...action.payload],
       };
     case "REMOVE_TASK":
       return {

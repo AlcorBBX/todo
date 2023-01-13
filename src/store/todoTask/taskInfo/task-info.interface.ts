@@ -46,7 +46,7 @@ export type SubTask = {
 };
 
 export enum taskInfoActions {
-  initialTasksInfo = "INITIAL_TASKS_INFO",
+  initialTaskInfo = "INITIAL_TASK_INFO",
   updateDescription = "UPDATE_TASK_DESCRIPTION",
   addNewComment = "ADD_NEW_COMMENT",
   updateTaskTitle = "UPDATE_TASK_TITLE",
@@ -84,7 +84,7 @@ export interface IRemoveTask {
 }
 
 export interface InitialTasksInfo {
-  type: taskInfoActions.initialTasksInfo;
+  type: taskInfoActions.initialTaskInfo;
   payload: ITaskInfo[];
 }
 export interface IUpdateDescription {

@@ -15,6 +15,7 @@
     height: 100%;
     position: absolute;
     border-radius: 10px;
+
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -27,14 +28,14 @@
       display: flex;
 
       > div p {
-        display: flex;
+        display: none;
         justify-content: start;
         overflow: hidden;
         text-overflow: ellipsis;
         -moz-box-orient: vertical;
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        color: #ededed;
+        // color: #ededed;
         line-height: 20px;
         word-wrap: break-word;
         font-size: 16px;

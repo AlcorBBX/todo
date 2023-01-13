@@ -12,7 +12,7 @@ const MainButtonMemo = memo(MainButton);
 export const ContentModaL = () => {
   const dispatch = useDispatch();
 
-  const [color, setColor] = useState("0079bf");
+  const [color, setColor] = useState<string>("#0079bf");
 
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -26,8 +26,9 @@ export const ContentModaL = () => {
   const textRef = useRef("");
   textRef.current = inputValue;
   const createNewProject = useCallback(() => {
-    if (textRef.current) {
+    if (textRef.current && color.length > 1) {
       const id = Date.now() * 2;
+      console.log(color);
       dispatch(
         addNewProject({
           id: id,
@@ -59,7 +60,9 @@ export const ContentModaL = () => {
           />
         </div>
         <div className={styles.buttons}>
-          <MainButtonMemo onClick={() => createNewProject()}>Создать</MainButtonMemo>
+          <MainButtonMemo onClick={() => createNewProject()}>
+            Создать
+          </MainButtonMemo>
         </div>
       </div>
     </>
