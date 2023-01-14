@@ -26,8 +26,8 @@ export const ModalLayout = ({
     <>
       <div className={styles.overlay} role='button'></div>
       <motion.div
-        initial={{ scale: Number(scale) }}
-        animate={{ rotate: 360, scale: Number(!scale) }}
+        initial={{rotate: 70, scale: Number(scale) }}
+        animate={{ rotate: 0, scale: Number(!scale) }}
         transition={{
           type: "spring",
           stiffness: 260,
