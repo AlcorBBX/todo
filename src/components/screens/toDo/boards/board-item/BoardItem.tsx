@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useOutside } from "../../../../../hooks";
@@ -10,6 +10,8 @@ import { BoardActions } from "../actions/BoardActions";
 export interface BoardItemProps {
   title: string;
 }
+
+const TasksMemo = memo(Tasks)
 
 export const BoardItem = ({ title }: BoardItemProps) => {
   const { ref, anchorEl, setAnchorEl } = useOutside();
@@ -43,7 +45,7 @@ export const BoardItem = ({ title }: BoardItemProps) => {
   return (
     <div ref={ref}>
       <BoardCard title={title} actions={actions}>
-        <Tasks title={title} />
+        <TasksMemo title={title} />
         {anchorEl && <SendInput text={value} setText={setValue} />}
       </BoardCard>
     </div>
