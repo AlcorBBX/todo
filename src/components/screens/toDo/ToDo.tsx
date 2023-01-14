@@ -1,13 +1,15 @@
 import { Boards } from "./boards/Boards";
+// import { Navigate } from "./navigate/Navigate";
 
 import styles from "./to-do.module.scss";
 
 export const ToDo = () => {
   return (
     <>
-      <div className={styles.task}>
+      {/* //TODO <Navigate namePage='Test' /> */}
+      <main className={styles.task}>
         <Boards />
-      </div>
+      </main>
     </>
   );
 };

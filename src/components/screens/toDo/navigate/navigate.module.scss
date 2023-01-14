@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  background: none;
+  color: var(--infoColor);
+  border: none;
+  font-size: 13px;
+  &:hover {
+    background: none;
+    text-decoration: underline;
+  }
+}
+
+.icon {
+  margin: 0 10px;
+}
