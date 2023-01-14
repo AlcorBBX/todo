@@ -1,5 +1,7 @@
 export { useOutside } from "./useOutside";
 
+export { useMount } from "./useMount";
+
 export { useTypedSelector } from "./useTypedSelector";
 
 export { useLocalStorageState } from "./useStorage";

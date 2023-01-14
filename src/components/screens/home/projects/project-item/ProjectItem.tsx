@@ -16,10 +16,6 @@ const ProjectCardMemo = memo(ProjectCard);
 export const ProjectItem = ({ project }: ProjectItemProps) => {
   const history = useNavigate();
 
-  // const openProject = () => {
-  //   history(`/task/${project.id}`);
-  // };
-
   const openProject = useCallback(() => {
     history(`/task/${project.id}`);
   }, []);

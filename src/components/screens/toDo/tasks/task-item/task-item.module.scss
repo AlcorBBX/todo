@@ -1,4 +1,4 @@
-.button{
+.taskItem{
   width: 100%;
   border: none;
   background-color: var(--mainBackgroundColor);
@@ -14,5 +14,10 @@
 
   &:active {
     cursor: grab;
+    background-color: var(--colorPrimaryActive);
+  }
+
+  &:hover {
+    background-color: var(--colorPrimaryBgHover);
   }
 }

@@ -30,9 +30,9 @@ export const TaskItem = ({ task }: TaskItemProps) => {
     <div>
       <TaskCard>
         {props => (
-          <button className={styles.button} onClick={e => OpenModal(e)}>
+          <p {...props} onDragEnd={(e) => console.log(e)}  className={styles.taskItem} onClick={e => OpenModal(e)}>
             {task.title}
-          </button>
+          </p>
         )}
       </TaskCard>
       {Modal}

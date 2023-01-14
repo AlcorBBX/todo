@@ -8,7 +8,7 @@ export interface ThemePickerProps {
 export const ThemePicker = ({ value, onChange }: ThemePickerProps) => {
   return (
     <>
-      <div className={styles.card} onClick={onChange}>
+      <div className={styles.card} role='button' onClick={onChange}>
         <ThemeIcon value={value} />
       </div>
     </>

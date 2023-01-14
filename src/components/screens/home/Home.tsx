@@ -8,7 +8,7 @@ import { Skeleton } from "../../ui/skeleton/Skeleton";
 export const Home = () => {
   const { projects, loading } = useTypedSelector(state => state.projects);
   return (
-    <div className={styles.home}>
+    <main className={styles.home}>
       <div className={styles.projects}>
         <ProjectCategory
           title='Рабочая площадка'
@@ -17,6 +17,6 @@ export const Home = () => {
           {loading ? <Skeleton /> : <Projects projects={projects} />}
         </ProjectCategory>
       </div>
-    </div>
+    </main>
   );
 };

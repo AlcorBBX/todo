@@ -1,6 +1,6 @@
 import { Portal } from "../../../../helpers/portal/Portal";
-
-import styles from "./overlaying-modal.module.scss";
+import { useMount } from "../../../../hooks";
+import { ModalLayout } from "./LayoutModalAnimated";
 
 interface IOverlayingModalProps {
   children: React.ReactNode;
@@ -13,17 +13,19 @@ export const OverlayingModal = ({
   refEl,
   anchorEl,
 }: IOverlayingModalProps) => {
+  const { mounted } = useMount({ anchorEl });
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
-      {anchorEl && (
-        <Portal>
-          <div className={styles.modal} role='button'>
-            <div ref={refEl} className={styles.modalInner} role='dialog'>
-              {children}
-            </div>
-          </div>
-        </Portal>
-      )}
+      <Portal>
+        <ModalLayout anchorEl={anchorEl} refEl={refEl}>
+          {children}
+        </ModalLayout>
+      </Portal>
     </>
   );
 };

@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { ThemeContext, themes } from "../../../contexts/ThemeContext";
-import { Auth } from "../../auth";
 import { ThemePicker } from "../../ui";
 import { ChristmasRope } from "./ChristmasRope";
 
@@ -12,7 +11,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <h2 onClick={() => history(`/`)}>To Do</h2>
+        <h2 role='button' onClick={() => history(`/`)}>
+          To Do
+        </h2>
 
         <ThemeContext.Consumer>
           {({ theme, setTheme }: any) => (
