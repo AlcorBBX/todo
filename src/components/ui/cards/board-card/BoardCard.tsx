@@ -1,6 +1,6 @@
 import { Card } from "../card/Card";
 
-import styles from './board-card.module.scss'
+import styles from "./board-card.module.scss";
 
 export interface BoardCardProps {
   title: string;
@@ -10,6 +10,9 @@ export interface BoardCardProps {
   children: React.ReactNode;
   cover?: React.ReactNode;
   actions?: React.ReactNode[];
+
+  value?: string;
+  setValue?: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const BoardCard = ({
@@ -21,10 +24,12 @@ export const BoardCard = ({
   headStyle,
   bodyStyle,
 }: BoardCardProps) => {
+  const boardTitle = <p className={styles.boardTitle}>{title}</p>;
+
   return (
     <Card
       cover={cover}
-      title={title}
+      title={boardTitle}
       extra={extra}
       headStyle={headStyle}
       bodyStyle={bodyStyle}

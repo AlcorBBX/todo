@@ -28,7 +28,6 @@ export const ContentModaL = () => {
   const createNewProject = useCallback(() => {
     if (textRef.current && color.length > 1) {
       const id = Date.now() * 2;
-      console.log(color);
       dispatch(
         addNewProject({
           id: id,

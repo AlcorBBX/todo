@@ -1,21 +1,21 @@
-import { NewTask } from "./NewTask";
+import { NewTaskAction } from "./action-items/NewTaskAction";
 
-interface INewTask {
+interface BoardActionsChildrenProps {
   anchorEl: HTMLElement | null;
   setAnchorEl: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   onClickHandler(): void;
 }
 
-interface IFooterActions extends INewTask {}
+interface BoardActionsProps extends BoardActionsChildrenProps {}
 
-export const FooterActions = ({
+export const BoardActions = ({
   anchorEl,
-  setAnchorEl,
   onClickHandler,
-}: IFooterActions) => {
+  setAnchorEl,
+}: BoardActionsProps) => {
   return (
     <>
-      <NewTask
+      <NewTaskAction
         onClickHandler={onClickHandler}
         anchorEl={anchorEl}
         setAnchorEl={setAnchorEl}

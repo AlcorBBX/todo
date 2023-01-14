@@ -9,7 +9,7 @@ export interface ButtonChildProps {
 export interface TaskCardProps {
   children: (props: ButtonChildProps) => React.ReactElement;
   bodyStyle?: React.CSSProperties;
-  handleClick?: () => void;
+  handleClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 export const TaskCard = ({

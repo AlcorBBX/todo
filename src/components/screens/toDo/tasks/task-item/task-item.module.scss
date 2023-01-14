@@ -1,0 +1,18 @@
+.button{
+  width: 100%;
+  border: none;
+  background-color: var(--mainBackgroundColor);
+  border-radius: 5px;
+  display: flex;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+
+  &:active {
+    cursor: grab;
+  }
+}

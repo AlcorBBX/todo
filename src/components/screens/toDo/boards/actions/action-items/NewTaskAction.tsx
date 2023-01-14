@@ -1,15 +1,16 @@
-import styles from "./new-task.module.scss";
+import styles from "./board-actions.module.scss";
 
-interface INewTask {
+export interface NewTaskActionProps {
   anchorEl: HTMLElement | null;
   setAnchorEl: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   onClickHandler(): void;
 }
-export const NewTask = ({
+
+export const NewTaskAction = ({
   anchorEl,
-  setAnchorEl,
   onClickHandler,
-}: INewTask) => {
+  setAnchorEl,
+}: NewTaskActionProps) => {
   return (
     <>
       <button
