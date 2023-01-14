@@ -1,0 +1,11 @@
+.modalContainer{
+  width: 60vw;
+  height: 60vh;
+}
+
+@media screen and (min-width: 1950px) {
+  .modalContainer{
+    width: 1860px;
+    // height: 60vh;
+  }
+}

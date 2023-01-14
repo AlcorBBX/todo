@@ -6,12 +6,13 @@ import { addNewTask } from "../../../../../store/todoTask/task-actions";
 import { BoardCard } from "../../../../ui/cards/board-card/BoardCard";
 import { Tasks } from "../../tasks/Tasks";
 import { BoardActions } from "../actions/BoardActions";
+import { CreateTaskInput } from "./CreateTaskInput";
 
 export interface BoardItemProps {
   title: string;
 }
 
-const TasksMemo = memo(Tasks)
+const TasksMemo = memo(Tasks);
 
 export const BoardItem = ({ title }: BoardItemProps) => {
   const { ref, anchorEl, setAnchorEl } = useOutside();
@@ -46,16 +47,8 @@ export const BoardItem = ({ title }: BoardItemProps) => {
     <div ref={ref}>
       <BoardCard title={title} actions={actions}>
         <TasksMemo title={title} />
-        {anchorEl && <SendInput text={value} setText={setValue} />}
+        {anchorEl && <CreateTaskInput text={value} setText={setValue} />}
       </BoardCard>
     </div>
   );
-};
-
-export interface SendInputProps {
-  text: string;
-  setText: React.Dispatch<React.SetStateAction<string>>;
-}
-export const SendInput = ({ setText, text }: SendInputProps) => {
-  return <input value={text} onChange={e => setText(e.target.value)} />;
 };
