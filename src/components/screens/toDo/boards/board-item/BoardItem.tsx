@@ -46,7 +46,7 @@ export const BoardItem = ({ title }: BoardItemProps) => {
   return (
     <div ref={ref}>
       <BoardCard title={title} actions={actions}>
-        <TasksMemo title={title} />
+        <Tasks title={title} />
         {anchorEl && <CreateTaskInput text={value} setText={setValue} />}
       </BoardCard>
     </div>
