@@ -44,5 +44,5 @@ This project can be run.
 
 ```sh
 yarn
-yarn s
+yarn start
 ```

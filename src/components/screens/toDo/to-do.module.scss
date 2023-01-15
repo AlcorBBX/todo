@@ -1,9 +1,32 @@
+@import "@scss/mixins.scss";
+
 .task {
   display: flex;
   justify-content: center;
 }
 
-@media screen and (max-width: 980px) {
+// @media screen and (max-width: 980px) {
+//   .task {
+//     padding: 0% 5%;
+
+//     > div {
+//       width: 95%;
+//       margin: 5px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 650px) {
+//   .task {
+//     flex-direction: column;
+//     > div {
+//       width: 95%;
+//       margin: 0px;
+//     }
+//   }
+// }
+
+@include respond(tab-port) {
   .task {
     padding: 0% 5%;
 
@@ -14,9 +37,10 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@include respond(phone) {
   .task {
     flex-direction: column;
+    text-align: center;
     > div {
       width: 95%;
       margin: 0px;
