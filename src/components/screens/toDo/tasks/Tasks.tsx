@@ -15,7 +15,7 @@ export const Tasks = ({ title }: TaskProps) => {
 
   const idNum = Number(id);
 
-  const filteredTasksMemo = useMemo(() => filterTasks(tasks), [tasks, title]);
+  // const filteredTasksMemo = useMemo(() => filterTasks(tasks), [tasks, title]);
 
   if (!tasks) {
     return null;
@@ -40,7 +40,7 @@ export const Tasks = ({ title }: TaskProps) => {
 
   return (
     <>
-      {filteredTasksMemo.map(task => (
+      {filterTasks(tasks).map(task => (
         <TaskItem task={task} key={task.id} />
       ))}
     </>
