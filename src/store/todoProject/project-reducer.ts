@@ -1,14 +1,15 @@
-import { IProject } from "../../types/project.interface";
+//@ts-ignore
+import { IProject } from "@types/project.interface";
 
 interface IProjectState {
   projects: IProject[];
   payload?: any;
   loading: boolean;
-};
+}
 
 const projectState: IProjectState = {
   projects: [],
-  loading: false
+  loading: false,
 };
 
 type TypeAction = {
@@ -22,11 +23,11 @@ const projectReducer = (
 ): IProjectState => {
   switch (action.type) {
     case "INITIAL_PROJECTS": {
-      state.loading = true
+      state.loading = true;
       state.projects = action.payload;
       return {
         ...state,
-        loading: false
+        loading: false,
       };
     }
 

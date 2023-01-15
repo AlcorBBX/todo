@@ -1,4 +1,4 @@
-import { Section } from "../../../section";
+import { Section } from "@components/section";
 import { BoardItem } from "./board-item/BoardItem";
 
 export const Boards = () => {

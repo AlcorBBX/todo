@@ -1,5 +1,6 @@
+//@ts-ignore
+import { IButton } from "@types/button.interface";
 import { FC } from "react";
-import { IButton } from "../../../../types/button.interface";
 
 import styles from "./project-button.module.scss";
 

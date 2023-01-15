@@ -1,4 +1,5 @@
-import { IProject } from "./../../types/project.interface";
+//@ts-ignore
+import { IProject } from "@types/project.interface";
 
 export const addNewProject = (payload: IProject) => {
   return {

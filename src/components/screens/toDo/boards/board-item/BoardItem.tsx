@@ -1,12 +1,12 @@
+import { BoardCard } from "@components/ui";
+import { useOutside } from "@hooks/useOutside";
+import { addNewTask } from "@store/todoTask/task-actions";
 import { memo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useOutside } from "../../../../../hooks";
-import { addNewTask } from "../../../../../store/todoTask/task-actions";
-import { BoardCard } from "../../../../ui/cards/board-card/BoardCard";
-import { Tasks } from "../../tasks/Tasks";
 import { BoardActions } from "../actions/BoardActions";
 import { CreateTaskInput } from "./CreateTaskInput";
+import { Tasks } from "../../tasks/Tasks";
 
 export interface BoardItemProps {
   title: string;

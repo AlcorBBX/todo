@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,43 +14,26 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
     // allies
-    // "baseUrl": "./src/",
-    // "paths": {
-    //   "@/components/*": [
-    //     "components/*"
-    //   ],
-    //   "@/pages/*": [
-    //     "pages/*"
-    //   ],
-    //   "@/assets/*": [
-    //     "assets/*"
-    //   ],
-    //   "@/hooks/*": [
-    //     "hooks/*"
-    //   ],
-    //   "@/providers/*": [
-    //     "providers/*"
-    //   ],
-    //   "@/services/*": [
-    //     "services/*"
-    //   ],
-    //   "@/utils/*": [
-    //     "utils/*"
-    //   ],
-    //   "@/types/*": [
-    //     "types/*"
-    //   ],
-    //   "@/store/*": [
-    //     "store/*"
-    //   ],
-    //   "@/routes/*": [
-    //     "routes/*"
-    //   ],
-    // }
+    "baseUrl": "./src/",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@assets/*": ["assets/*"],
+      "@hooks/*": ["hooks/*"],
+      "@providers/*": ["providers/*"],
+      "@services/*": ["services/*"],
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"],
+      "@store/*": ["store/*"],
+      "@routes/*": ["routes/*"],
+      "@config/*": ["config/*"],
+      "@contexts/*": ["contexts/*"],
+      "@helpers/*": ["helpers/*"],
+      "@scss/*": ["scss/*"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

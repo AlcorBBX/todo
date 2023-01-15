@@ -1,21 +1,21 @@
-import { FC, PropsWithChildren } from "react";
-import { Section } from "../../..";
-import { useOutside } from "../../../../hooks";
-import { MainModal, NewProjectButton, Tooltip } from "../../../ui";
-
-import styles from "../home.module.scss";
+import { Section } from "@components/section";
+import { MainModal, NewProjectButton, Tooltip } from "@components/ui";
+import { useOutside } from "@hooks/useOutside";
 import { ContentModaL } from "./ContentModal";
 
-interface IProjectCategoryProps {
+import styles from "../home.module.scss";
+
+interface ProjectCategoryProps {
+  children: React.ReactNode;
   title: string;
   tooltipText: string;
 }
 
-export const ProjectCategory: FC<PropsWithChildren<IProjectCategoryProps>> = ({
+export const ProjectCategory = ({
   children,
   title,
   tooltipText,
-}) => {
+}: ProjectCategoryProps) => {
   const { ref, anchorEl, setAnchorEl } = useOutside();
   const OpenModal = (e: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(e.currentTarget);

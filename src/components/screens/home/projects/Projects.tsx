@@ -1,5 +1,6 @@
+//@ts-ignore
+import { IProject } from "@types/project.interface";
 import { ProjectItem } from "./project-item/ProjectItem";
-import { IProject } from "../../../../types/project.interface";
 
 import styles from "./projects.module.scss";
 

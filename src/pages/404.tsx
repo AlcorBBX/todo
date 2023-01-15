@@ -1,5 +1,5 @@
-import { Layout } from "../components/layout/Layout";
-import { Card } from "../components/ui";
+import { Card } from "@components/ui";
+import { Layout } from "@components/layout/Layout";
 
 export const NotFound = () => {
   return (

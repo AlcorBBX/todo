@@ -1,4 +1,5 @@
-import { ITask } from "../../types/task.interface";
+//@ts-ignore
+import { ITask } from "@types/task.interface";
 
 export const initialTasks = (payload: ITask[]) => {
   return {
@@ -13,7 +14,6 @@ export const addNewTask = (payload: ITask) => {
     payload,
   };
 };
-
 
 export const updateTaskName = (payload: string) => {
   return {

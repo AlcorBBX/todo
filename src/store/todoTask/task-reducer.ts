@@ -1,4 +1,5 @@
-import { ITask } from "../../types/task.interface";
+//@ts-ignore
+import { ITask } from "@types/task.interface";
 
 interface ITaskState {
   tasks: ITask[];

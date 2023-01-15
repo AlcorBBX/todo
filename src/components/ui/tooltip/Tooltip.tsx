@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
-import { Portal } from "../../../helpers/portal/Portal";
-import { useOutside } from "../../../hooks";
+import { Portal } from "@helpers/portal/Portal";
+import { useOutside } from "@hooks/useOutside";
 
 interface TooltipChildProps {
   onMouseEnter: React.MouseEventHandler<HTMLElement>;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ANIMATION_TIME } from "../utils/consts";
+import { ANIMATION_TIME } from "@utils/consts";
 
 export interface UseMountProps {
   anchorEl: HTMLElement | null;

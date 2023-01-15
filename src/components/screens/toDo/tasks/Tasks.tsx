@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { useTypedSelector } from "../../../../hooks";
-import { ITask } from "../../../../types/task.interface";
+import { useTypedSelector } from "@hooks/useTypedSelector";
+//@ts-ignore
+import { ITask } from "@types/task.interface";
 import { TaskItem } from "./task-item/TaskItem";
 
 export interface TaskProps {

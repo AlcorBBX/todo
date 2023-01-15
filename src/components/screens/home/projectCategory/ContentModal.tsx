@@ -1,7 +1,7 @@
 import { memo, useCallback, useLayoutEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addNewProject } from "../../../../store/todoProject/project-actions";
-import { Field, MainButton } from "../../../ui";
+import { Field, MainButton } from "@components/ui";
+import { addNewProject } from "@store/todoProject/project-actions";
 import { ColorsProject } from "./ColorsProject";
 
 import styles from "./content-modal.module.scss";

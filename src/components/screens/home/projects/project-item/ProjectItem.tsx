@@ -1,7 +1,8 @@
+import { ProjectCard, Tooltip } from "@components/ui";
+//@ts-ignore
+import { IProject } from "@types/project.interface";
 import { memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { IProject } from "../../../../../types/project.interface";
-import { ProjectCard, Tooltip } from "../../../../ui";
 
 import styles from "./project-item.module.scss";
 

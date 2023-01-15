@@ -1,5 +1,4 @@
-import { CancelButton } from "../..";
-import { OverlayingModal } from "../overlaying/OverlayingModal";
+import { CancelButton, OverlayingModal } from "@components/ui";
 
 import styles from "./main-modal.module.scss";
 
