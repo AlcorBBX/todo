@@ -1,3 +1,5 @@
+@import "@scss/mixins.scss";
+
 .home {
   width: 980px;
   margin: 0 auto;
@@ -27,11 +29,28 @@
   display: flex;
 
   button {
-
   }
 }
 
-@media screen and (max-width: 980px) {
+// @media screen and (max-width: 980px) {
+//   .home {
+//     width: 95%;
+//   }
+
+//   .projects {
+//     width: 80%;
+//     padding: 3% 4%;
+//   }
+
+//   .projectsCards {
+
+//     button {
+//       width: 100%;
+//     }
+//   }
+// }
+
+@include respond(tab-port) {
   .home {
     width: 95%;
   }
@@ -42,7 +61,6 @@
   }
 
   .projectsCards {
-  
     button {
       width: 100%;
     }

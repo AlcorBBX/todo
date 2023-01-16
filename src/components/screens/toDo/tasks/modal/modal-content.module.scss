@@ -1,10 +1,18 @@
-.modalContainer{
+@import "@scss/mixins.scss";
+
+.modalContainer {
   width: 60vw;
   height: 60vh;
 }
 
-@media screen and (min-width: 1950px) {
-  .modalContainer{
+// @media screen and (min-width: 1950px) {
+//   .modalContainer {
+//     width: 1860px;
+//   }
+// }
+
+@include respond(big-desktop) {
+  .modalContainer {
     width: 1860px;
   }
 }
