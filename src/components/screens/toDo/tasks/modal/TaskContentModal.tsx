@@ -1,24 +1,18 @@
-import { ITask } from "../../../../../types/task.interface";
 import { TaskDescription } from "./TaskDescription";
 import { TaskName } from "./TaskName";
+//@ts-ignore
+import { ITask } from "@types/task.interface";
 
-import styles from './modal-content.module.scss'
+import styles from "./modal-content.module.scss";
+
 export interface TaskContentModalProps {
-  task?: ITask;
-  // taskInfo:
-  taskTitle: string;
-  taskType: string;
+  task: ITask;
 }
 
-export const TaskContentModal = ({
-  task,
-  // taskInfo,
-  taskTitle,
-  taskType,
-}: TaskContentModalProps) => {
+export const TaskContentModal = ({ task }: TaskContentModalProps) => {
   return (
     <div className={styles.modalContainer}>
-      <TaskName taskTitle={taskTitle} taskType={taskType} />
+      <TaskName task={task} />
       <TaskDescription />
     </div>
   );

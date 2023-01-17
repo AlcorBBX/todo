@@ -1,6 +1,7 @@
-import { useOutside } from "../../../../../hooks";
-import { ITask } from "../../../../../types/task.interface";
-import { MainModal } from "../../../../ui";
+import { MainModal } from "@components/ui";
+import { useOutside } from "@hooks/useOutside";
+//@ts-ignore
+import { ITask } from "@types/task.interface";
 import { TaskCard } from "../../../../ui/cards/task-card/TaskCard";
 import { TaskContentModal } from "../modal/TaskContentModal";
 
@@ -22,7 +23,7 @@ export const TaskItem = ({ task }: TaskItemProps) => {
       setAnchorEl={setAnchorEl}
       title='Task Info'
     >
-      <TaskContentModal taskTitle={task.title} taskType={task.type} />
+      <TaskContentModal task={task} />
     </MainModal>
   );
 
@@ -30,7 +31,12 @@ export const TaskItem = ({ task }: TaskItemProps) => {
     <div>
       <TaskCard>
         {props => (
-          <p {...props} onDragEnd={(e) => console.log(e)}  className={styles.taskItem} onClick={e => OpenModal(e)}>
+          <p
+            {...props}
+            onDragEnd={e => console.log(e)}
+            className={styles.taskItem}
+            onClick={e => OpenModal(e)}
+          >
             {task.title}
           </p>
         )}

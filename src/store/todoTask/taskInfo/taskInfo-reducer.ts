@@ -2,7 +2,7 @@ import { ITaskInfo, TaskInfoAction } from "./task-info.interface";
 
 interface ITaskInfoState {
   tasksInfo: ITaskInfo[];
-  taskInfo?: ITaskInfo;
+  pickedTaskInfo?: ITaskInfo;
   error: any;
   loading: boolean;
 }
@@ -22,7 +22,7 @@ export const taskInfoReducer = (
       
     return {
         ...state,
-        // taskInfo: [...state.tasksInfo, ...action.payload],
+        // pickedTaskInfo: state.tasksInfo.filter(task => task.id !== action.payload),
       };
     case "REMOVE_TASK":
       return {

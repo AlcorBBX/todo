@@ -1,8 +1,8 @@
-import { ITaskInfo, Comment, SubTask } from "./task-info.interface";
+import { Comment, SubTask } from "./task-info.interface";
 
 export const initialTaskInfo = (payload: number) => {
   return {
-    type: "INITIAL_TASKs_INFO",
+    type: "INITIAL_TASK_INFO",
     payload,
   };
 };
