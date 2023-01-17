@@ -14,7 +14,7 @@ export const TaskName = ({ task }: NameTaskModalProps) => {
     <ContentItemCard>
       <div className={styles.nameBlock}>
         <p className={styles.name}>{task.title}</p>
-        <Title taskId={task.id} />
+        {/* <Title taskId={task.id} /> */}
         <p className={styles.positionInfo}>
           в колонке <span>{task.type}</span>
         </p>
