@@ -22,6 +22,9 @@ export const TaskCard = ({ children, bodyStyle }: TaskCardProps) => {
     <Card className={styles.card} bodyStyle={bodyStyle}>
       {children({
         draggable: true,
+        onDrag: e => {},
+        onDragEnter: e => {},
+        onDragEnd: e => {},
       })}
     </Card>
   );

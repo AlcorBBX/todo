@@ -29,11 +29,51 @@ export interface TitleProps {
 //TODO: change the value in the store via useDebounce
 export const Title = ({ taskId }: TitleProps) => {
   const [value, setValue] = useState("");
+  // const useDebounce = makeDebouncedHook(debounce);
+  // function makeDebounceEffectHook(useDebounceHook) {
+  //   return function (cb, deps, ms) {
+  //     const isInitialRender = useRef(true);
+  //     const cleanUpFn = useRef();
+
+  //     const debouncedCb = useDebounceHook(() => {
+  //       cleanUpFn.current = cb();
+  //     }, ms);
+
+  //     useEffect(() => {
+  //       if (isInitialRender.current) {
+  //         isInitialRender.current = false;
+  //         return;
+  //       }
+
+  //       debouncedCb();
+
+  //       return () => {
+  //         if (typeof cleanUpFn.current === "function") {
+  //           cleanUpFn.current();
+  //           cleanUpFn.current = undefined;
+  //         }
+  //       };
+  //     }, [debouncedCb, ...deps]);
+  //   };
+  // }
+  // const useDebounceEffect = makeDebounceEffectHook(useDebounce);
+  // useDebounceEffect(
+  //   () => {
+  //     console.log("make request with value: ", value);
+
+  //     return () => {
+  //       console.log("cancel request with value: ", value);
+  //     };
+  //   },
+  //   [value],
+  //   500
+  // );
+
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setValue(value);
+  };
   return (
-    <input
-      // placeholder={value}
-      value={value}
-      onChange={e => setValue(e.target.value)}
-    />
+    <input placeholder='' value={value} onChange={e => handleQueryChange(e)} />
   );
 };
