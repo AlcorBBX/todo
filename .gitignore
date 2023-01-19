@@ -25,3 +25,4 @@ src/components/ui/datePicker/__tests__/DatePicker.test.tsx
 toDo.md
 src/.env
 src/providers/AuthProvider.tsx
+.vscode/settings.json

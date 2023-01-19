@@ -5,9 +5,9 @@ import styles from "./task-card.module.scss";
 type Booleanish = boolean | "true" | "false";
 export interface TaskCardChildProps {
   onClick?: React.MouseEventHandler<HTMLElement>;
-  onDrag?: React.DragEventHandler<HTMLDivElement> | undefined;
-  onDragEnter?: React.DragEventHandler<HTMLDivElement> | undefined;
-  onDragEnd?: React.DragEventHandler<HTMLDivElement> | undefined;
+  onDrag?: React.DragEventHandler<HTMLElement> | undefined;
+  onDragEnter?: React.DragEventHandler<HTMLElement> | undefined;
+  onDragEnd?: React.DragEventHandler<HTMLElement> | undefined;
   draggable?: Booleanish | undefined;
 }
 
