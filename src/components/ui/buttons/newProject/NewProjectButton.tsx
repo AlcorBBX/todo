@@ -15,3 +15,5 @@ export const NewProjectButton: FC<INewProjectButton> = ({ text, ...rest }) => {
     </button>
   );
 };
+
+/* <button {...rest} className={styles.button}><span>{text}</span></button> */
