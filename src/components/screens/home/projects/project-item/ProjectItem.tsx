@@ -18,7 +18,7 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
   const history = useNavigate();
 
   const openProject = useCallback(() => {
-    history(`/task/${project.id}`);
+    history(`/task/${project.id}`, { state: project.name });
   }, []);
 
   return (
